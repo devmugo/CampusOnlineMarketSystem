@@ -102,10 +102,10 @@
         </div>
         <div>
             <!-- Card group -->
-            <div class="card-group" style="padding-top: 20px">
+           <div class="card-deck" style="padding: 1.5em 1.5em 1.5em 1.5em;">
 
                 <!-- Card -->
-                <div id="about" class="card mb-4">
+                <div id="about" class="card mb-4" style="padding: 1.5em 1.5em 1.5em 1.5em;">
                    <!-- Card -->
                     <div class="card card-image" style="background-image:url('img/back.jpg');">
 
@@ -142,7 +142,7 @@
                 <!-- Card -->
 
                 <!-- Card -->
-                <div id="contact" class="card mb-4" style="padding-left: 10px">
+                <div id="contact" class="card mb-4" style=" padding: 1.5em 1.5em 1.5em 1.5em;">
 
                     <div style="padding:  0 1.5em 0 1.5em;">
                         <!-- Default form contact -->

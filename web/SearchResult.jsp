@@ -95,10 +95,10 @@
             </div>
         </nav>
         <div style="max-width:100%;text-align: center;">
-        <h1 style="color: black; "> search results </h1>
+            <h1 style="color: black; "> search results </h1>
         </div>
-        <div style="height: 90px; "> 
-            
+        <div style="height: 30px; "> 
+
             <div style="max-width: 100%;margin-left: 30px; height: 40px">
                 <h5 style="color:green; ">   ${requestScope.success} </h5> 
                 <h5 style="color:black"> ${requestScope.error}  </h5> 
@@ -108,23 +108,22 @@
 
         </div>
 
-        <div class="card-deck" style="display: flex; flex-wrap: wrap; padding-left: 20px" >
+        <div class="card-deck" style="display: flex; flex-wrap: wrap; padding-left: 2% " >
             <c:forEach  begin="0" end="5" var="upload" varStatus="vs" items="${searchresults}">
                 <!-- Card -->
 
-                  <div class="card mb-3"style="flex: 1 0 22%; max-width: 20%; ">
+                <div class="card mb-3"style="flex: 1 0 22%; max-width: 22%; ">
                     <div>
                         <img class="card-img-top" src="data:image/jpg;base64,${upload.b64}" alt="Item" height="200px">
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="height:65%">
 
                         <!-- Title -->
                         <h4 class="card-title"><a>${upload.brand}</a></h4>
                         <!-- Text -->
-                        <b>     <p class="card-text">${upload.cond}</p> </b> 
+                        <p class="card-text"> <b> ${upload.cond} </b> </p> 
 
-                        <b>     <p class="card-text">ksh ${upload.price}</p>  </b>
-                        <p class="card-text"></p>
+                        <p class="card-text">ksh <b> ${upload.price}  </b></p> 
 
                         <a class="btn btn-primary"  data-toggle="modal" href="#myModal${vs.index}" id="viewDetailButton${vs.index}" >Buy</a>
                         <!-- Modal -->
@@ -149,7 +148,7 @@
 
                                     </div>
                                     <div class="modal-footer">
-                                        
+
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                         <a class="btn btn-primary" href="Transactions?index=${upload.itemindex}"> Continue</a>
                                     </div>
@@ -166,13 +165,13 @@
 
             </c:forEach>
         </div>
-                <div style="padding: 30px">
-                    
-                    
-                    
-                </div>
+        <div style="padding: 30px">
+
+
+
+        </div>
         <jsp:include page="./includes/scripts.jsp"/>
         <script type="text/javascript" src="js/toast_message.js"></script>
-        
+
     </body>
 </html>

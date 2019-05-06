@@ -64,7 +64,7 @@ public class UserServlet extends HttpServlet {
           
         } finally {
             session.close();
-             request.getRequestDispatcher("/Register.jsp").forward(request, response);
+             request.getRequestDispatcher("/Login.jsp").forward(request, response);
             
             
         }

@@ -101,25 +101,90 @@
                 </div>
                 <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
             </form>
-            <div style="max-width: 100%;margin-left: 30px; height: 40px">
+            <div style="max-width: 100%;margin-left: 30px; height: 50px">
                 <h5 style="color:green; ">   ${requestScope.success} </h5> 
                 <h5 style="color:black"> ${requestScope.error}  </h5> 
                 <br>
             </div>
-
-
+                
             <div class="card-deck" style="display: flex; flex-wrap: wrap; padding-left: 2% " >
  
                 <c:forEach  var="upload" varStatus="vs" items="${goods}">
                     <!-- Card -->
                     <div class="card mb-3"style="flex: 1 0 22%; max-width: 22%; ">
 
-                        <div>
-                            <img class="card-img-top" src="data:image/jpg;base64,${upload.b64}" alt="Card image cap" height="250px">
+                        <div style="">
+                            <img class="card-img-top" src="data:image/jpg;base64,${upload.b64}" alt="Card image cap" height="200px">
                         </div>
 
                         <div class="card-body  mb-2" >
-                            <div>
+                            <div style="height:65%">
+
+                                <h4 class="card-title"><a>${upload.brand}</a></h4>
+                                <strong>     <p class="card-text">${upload.cond}</p> </strong> 
+                                <strong>     <p class="card-text">Ksh ${upload.price}</p>  </strong>
+                                <strong>         <p class="card-text"></p> </strong>  
+                                <p class="card-text"></p>
+                            </div>
+                                <div>
+                            <a class="btn btn-primary"  data-toggle="modal" href="#myModal${vs.index}" id="viewDetailButton${vs.index}" >Buy</a>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal${vs.index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                 aria-hidden="true">
+
+                                <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle" style="color: black; font-weight: bold">Confirm Purchase</h5>
+
+                                        </div>
+                                        <div class="modal-body" style="color: black">
+                                            <h4>You are about to purchase ${upload.brand} ${upload.category}</h4>
+                                            <p >Working Condition :<b> ${upload.cond} </b> </p>
+                                            <p>Which is  : <b> ${upload.age} </b> </p>
+                                            <p>At a price of :<b>  ${upload.price}</b> </p>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <a class="btn btn-primary" href="Transactions?index=${upload.itemindex}"> Continue</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                </c:forEach>
+            </div>
+                <div style="align-items: center">
+                    <h1 style="padding-left: 39%;color: black">Recent Uploads </h1>
+                    
+                </div>
+
+
+            <div class="card-deck" style="display: flex; flex-wrap: wrap; padding-left: 2% " >
+ 
+                <c:forEach begin="0" end="9" var="upload" varStatus="vs" items="${goods}">
+                    <!-- Card -->
+                    <div class="card mb-3"style="flex: 1 0 22%; max-width: 22%; ">
+
+                        <div style="background:green">
+                            <img class="card-img-top" src="data:image/jpg;base64,${upload.b64}" alt="Card image cap" height="200px">
+                        </div>
+
+                        <div class="card-body  mb-2" >
+                            <div style="height:65%">
 
                                 <h4 class="card-title"><a>${upload.brand}</a></h4>
                                 <strong>     <p class="card-text">${upload.cond}</p> </strong> 

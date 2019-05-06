@@ -30,22 +30,22 @@ public class TransactionClass {
     private String itemsold;
     private Date date;
     private String msgsent;
+   private String itemdelivered;
 
     public TransactionClass() {
     }
 
-    public TransactionClass(String buyerid, String sellerid, String itemsold, Date date,String msgsent) {
+    public TransactionClass(String sellerid, String buyerid, String itemsold, Date date,String msgsent,String itemdelivered) {
         
         this.buyerid = buyerid;
         this.sellerid = sellerid;
         this.itemsold = itemsold;
         this.date = date;
         this.msgsent=msgsent;
+         this.itemdelivered = itemdelivered;
     }
 
    
-    
-
     public int getTransactionId() {
         return transactionId;
     }
@@ -90,10 +90,20 @@ public class TransactionClass {
         this.msgsent = msgsent;
     }
 
+    public String getItemdelivered() {
+        return itemdelivered;
+    }
+
+    public void setItemdelivered(String itemdelivered) {
+        this.itemdelivered = itemdelivered;
+    }
+
     @Override
     public String toString() {
-        return "TransactionClass{" + "transactionId=" + transactionId + ", buyerid=" + buyerid + ", sellerid=" + sellerid + ", itemsold=" + itemsold + ", date=" + date + ", msgsent=" + msgsent + '}';
+        return "TransactionClass{" + "transactionId=" + transactionId + ", buyerid=" + buyerid + ", sellerid=" + sellerid + ", itemsold=" + itemsold + ", date=" + date + ", msgsent=" + msgsent + ", itemdelivered=" + itemdelivered + '}';
     }
+    
+    
      
 
     

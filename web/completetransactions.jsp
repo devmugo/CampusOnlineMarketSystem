@@ -26,30 +26,9 @@
 
 
         %>
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-                <ul class="navbar-nav mr-auto">
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="Adminpage.jsp">Home </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto nav-flex-icons">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="LogOut">Log Out</a>
-                    </li>
-
-            </div>
-        </nav>
-           <div style="align-content:  center">
-            <h1 style="padding-left: 35%"> <u> Completed Transactions </u></h1>
+        <jsp:include page="./includes/Adminnav.jsp"/>
+           <div style="align-content:  center;margin-top: 50px">
+            <h1 style="padding-left: 35%;color: black"> <u> Completed Transactions </u></h1>
         </div>
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead>

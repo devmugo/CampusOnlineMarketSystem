@@ -11,7 +11,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="./includes/global_stylesheets.jsp"/>
         <title>Register </title>
-        <link href="css/toast_message.css" rel="stylesheet"/>
         <script type="text/javascript" src="js/charts.js"></script>
     </head>
     <body>
@@ -64,6 +63,8 @@
                     </div>
                 </div>
                 <input type="tel" id="defaultRegisterPhonePassword" class="form-control" name="id" autocomplete="off" placeholder="National id" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                <div id="iderror" style="color: red; float:left">
+               </div>
                 <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
 
                 </small>
@@ -80,10 +81,8 @@
                     </div>
                     
                 </div>
-                 <div id="passerror">
-                    <p > </p> 
-                    
-                </div>
+                 <div id="passerror" style="color: red">
+               </div>
                 <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
 
                 </small>
@@ -91,6 +90,8 @@
 
                 <!-- Phone number -->
                 <input type="tel" id="defaultRegisterPhonePassword" autocomplete="off" name="phone" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+               <div id="phoneerror" style="color: red">
+               </div>
                 <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
 
                 </small>
@@ -103,7 +104,7 @@
 
 
                 <!-- Sign up button -->
-                <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+                <button class="btn btn-info my-4 btn-block" type="submit">Register </button>
 
             </form>
             <!-- Default form register -->

@@ -26,36 +26,17 @@
 
 
         %>
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-                <ul class="navbar-nav mr-auto">
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="Adminpage.jsp">Home </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto nav-flex-icons">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="LogOut">Log Out</a>
-                    </li>
-
-            </div>
-        </nav>
+        <jsp:include page="./includes/Adminnav.jsp"/>
         <div>
-            <h1 style="padding-left: 39%"> <u>Registered Users </u>    </h1>
+            <h1 style="padding-left: 39%;color: black;margin-top: 50px"> <u>Registered Users </u>    </h1>
         </div>
 
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead>
                 <tr>
+                   <th class="th-sm"> <b>Index </b> 
 
+                    </th>
                     <th class="th-sm"> Name
                     </th>
                     <th class="th-sm"> Phone Number
@@ -66,9 +47,9 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="user" items="${users}">
+                <c:forEach var="user" items="${users}" varStatus="counts">
                     <tr>
-
+                        <td>${counts.index+1}</td>
                         <td>${user.firstName} ${user.lastName} </td>
                         <td>${user.phone}</td>
                         <td>${user.nationalId}</td>

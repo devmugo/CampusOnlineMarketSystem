@@ -55,9 +55,10 @@ public class Transactions extends HttpServlet {
            HttpSession sessionsa = request.getSession(false);
            String buyerid = (String) sessionsa.getAttribute("nationalid");
            String msgsent="No";
+           String itemdelivered="No";
           
            
-           TransactionClass transact = new TransactionClass(sellerid,buyerid,itemsold,date,msgsent);
+           TransactionClass transact = new TransactionClass(sellerid,buyerid,itemsold,date,msgsent,itemdelivered);
             if(itemonsale!=null){
             session.delete(itemonsale);
             

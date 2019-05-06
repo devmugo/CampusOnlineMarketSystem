@@ -32,7 +32,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
                     </li>
-                   </ul>
+                </ul>
                 <ul class="navbar-nav ml-auto nav-flex-icons">
 
                     <li class="nav-item">
@@ -42,7 +42,7 @@
             </div>
         </nav> 
         <div class="flex-center flex-column" style="padding-top: 2%">
-            <!--Login page starts here-->
+           
             <section>
 
                 <!--F-->
@@ -67,11 +67,7 @@
 
                             </div>
 
-                           <div style="max-width: 100%; height: 40px">
-                                 <h5 style="color:green; ">   ${requestScope.success} </h5> 
-                                 <h5 style="color:red"> ${requestScope.error}  </h5> 
-                               <br>
-                           </div>
+
                             <div class="row d-flex align-items-center mb-4">
 
                                 <!--Grid column-->
@@ -85,7 +81,7 @@
 
                         <!--Grid column-->
                         <div class="col-md-12">
-                            <p class="font-small d-flex justify-content-end" style="color: black">Forgot Password ?<a href="Contact_Us.jsp" class="ml-1 font-weight-bold ">Let us know</a></p>
+                            <p class="font-small d-flex justify-content-end" style="color: black"><a href="confirmEmail.jsp" class="ml-1 font-weight-bold ">Forgot Password ?</a></p>
                         </div>
                         <!--Grid column-->
 

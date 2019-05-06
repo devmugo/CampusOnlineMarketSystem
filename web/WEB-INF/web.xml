@@ -76,6 +76,18 @@
         <servlet-name>GetDoneTransactions</servlet-name>
         <servlet-class>servlets.GetDoneTransactions</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InformBuyerServlet</servlet-name>
+        <servlet-class>servlets.InformBuyerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SendLinkServlet</servlet-name>
+        <servlet-class>servlets.SendLinkServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ResetPasswordServlet</servlet-name>
+        <servlet-class>servlets.ResetPasswordServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -151,6 +163,18 @@
     <servlet-mapping>
         <servlet-name>GetDoneTransactions</servlet-name>
         <url-pattern>/GetDoneTransactions</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InformBuyerServlet</servlet-name>
+        <url-pattern>/InformBuyerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendLinkServlet</servlet-name>
+        <url-pattern>/SendLinkServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResetPasswordServlet</servlet-name>
+        <url-pattern>/ResetPasswordServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

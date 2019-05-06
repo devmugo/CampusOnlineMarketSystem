@@ -27,46 +27,27 @@
 
 
         %>
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-                <ul class="navbar-nav mr-auto">
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="Adminpage.jsp">Home </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto nav-flex-icons">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="LogOut">Log Out</a>
-                    </li>
-
-            </div>
-        </nav>
+       <jsp:include page="./includes/Adminnav.jsp"/>
         <div style="align-content:  center">
-            <h1 style="padding-left: 35%"> <u> Pending Transactions </u></h1>
+            <h1 style="padding-left: 35%;color: black;margin-top: 50px"> <u> Pending Transactions </u></h1>
         </div>
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th class="th-sm"> <b>Transaction Id </b>
                     </th>
-                    <th class="th-sm"> <b> ID (Seller) </b>
-                    </th>
                     <th class="th-sm"> <b> ID (Buyer) </b>
+                    </th>
+                    <th class="th-sm"> <b> ID (Seller) </b>
                     </th>
                     <th class="th-sm"> <b> Date       </b>
                     </th>
                     <th class="th-sm"> <b> Item Sold   </b>
                     </th>
-                    
+                   
                     <th class="th-sm"> <b> Inform Seller  </b>
+                    </th>
+                    <th class="th-sm"> <b> Item Availed </b>
                     </th>
                      <th class="th-sm"> <b> Mark as Completed  </b>
                     </th>
@@ -84,16 +65,34 @@
                         <td>${txn.buyerid}</td>
                         <td>${txn.sellerid}</td>
                         <td>${txn.date}</td> 
-                        <td>${txn.itemsold}</td>
+                        <td>${txn.itemsold} </td>
                         <c:choose>
-                            <c:when test="${txn.msgsent==yes}">
-                                <td>  <a class="btn btn-brown btn-sm btn-rounded btn-primary" href="#"> Mail Sent</a>
+                            <c:when test="${txn.msgsent=='yes'}">
+                                
+                                <td>  <a class="btn btn-green btn-sm btn-rounded btn-primary" href="#"> Mail Sent</a>
                                 </td>
 
                             </c:when>
                             <c:otherwise>
-                            <td>  <a class="btn btn-green btn-sm btn-rounded btn-primary" href="MailServlet?index=${txn.transactionId}"> Send Mail</a>
+                                <td>  <a class="btn btn-blue-grey btn-sm btn-rounded btn-primary" href="MailServlet?index=${txn.transactionId}"> Send Mail</a>
                                 </td>
+                                
+                            
+
+                            </c:otherwise>
+                        </c:choose>
+                                 <c:choose>
+                            <c:when test="${txn.itemdelivered=='yes'}">
+                                
+                                <td>  <a class="btn btn-green  btn-sm btn-rounded btn-primary" href="#"> Yes</a>
+                                </td>
+
+                            </c:when>
+                            <c:otherwise>
+                                <td>  <a class="btn btn-red btn-sm btn-rounded btn-primary" href="InformBuyerServlet?index=${txn.transactionId}"> No</a>
+                                </td>
+                                
+                            
 
                             </c:otherwise>
                         </c:choose>

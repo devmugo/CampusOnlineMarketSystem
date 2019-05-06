@@ -41,6 +41,7 @@ public class Upload {
     @Transient
     private String b64;
     private Date date; 
+    private String description;
     
     public String getB64() {
         return b64;
@@ -54,7 +55,7 @@ public void setB64(String b64) {
     public Upload() {
     }
 
-    public Upload(String nationalid, String category, String brand, byte[] image, String age, String cond, double price ,Date date) {
+    public Upload(String nationalid, String category, String brand, byte[] image, String age, String cond, double price ,Date date,String description) {
         
         this.nationalid = nationalid;
         this.category = category;
@@ -63,7 +64,8 @@ public void setB64(String b64) {
         this.age = age;
         this.cond = cond;
         this.price = price;
-        this.date=date;
+        this.date= date;
+        this.description= description;
     }
 
     public int getItemindex() {
@@ -133,13 +135,24 @@ public void setB64(String b64) {
     public void setDate(Date date) {
         this.date = date;
     }
-    
-    
-    
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
-        return "Upload{" + "itemindex=" + itemindex + ", nationalid=" + nationalid + ", category=" + category + ", brand=" + brand + ", image=" + image + ", age=" + age + ", cond=" + cond + ", price=" + price + ", b64=" + b64 + '}';
+        return "Upload{" + "itemindex=" + itemindex + ", nationalid=" + nationalid + ", category=" + category + ", brand=" + brand + ", image=" + image + ", age=" + age + ", cond=" + cond + ", price=" + price + ", b64=" + b64 + ", date=" + date + ", description=" + description + '}';
     }
+    
+    
+    
+    
+    
     
     
     

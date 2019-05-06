@@ -27,29 +27,11 @@
 
 
         %>
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-                <ul class="navbar-nav mr-auto">
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="Adminpage.jsp">Home </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto nav-flex-icons">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="LogOut">Log Out</a>
-                    </li>
-
-            </div>
-        </nav>
-
+        <jsp:include page="./includes/Adminnav.jsp"/>
+        <div>
+            <h1 style="padding-left: 39%;color: black"> <u>Messages </u>    </h1>
+        </div>
         <!--Table-->
         <table id="myTable" class="table table-bordered table-striped table-responsive-md" >
 

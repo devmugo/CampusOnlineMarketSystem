@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
            sessionScope.setAttribute("nationalid", user.getNationalId());
            success= "Welcome " + user.getFirstName();
            request.setAttribute("success", success);
-           request.getRequestDispatcher("Adminpage.jsp").forward(request, response);
+           response.sendRedirect("ViewTransactions");
            
             
         }//normal user log in

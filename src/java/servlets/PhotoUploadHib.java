@@ -60,9 +60,10 @@ public class PhotoUploadHib extends HttpServlet {
             }
             String age = request.getParameter("itemage");
             String cond = request.getParameter("condition");
+             String desc = request.getParameter("description");
             Double price = Double.parseDouble(request.getParameter("price"));
 
-            Upload upload = new Upload(id, category.toUpperCase(), brand.toUpperCase(), output.toByteArray(), age, cond, price,date);
+            Upload upload = new Upload(id, category.toUpperCase(), brand.toUpperCase(), output.toByteArray(), age, cond, price,date,desc);
             session.save(upload);
             transaction.commit();
             success="Upload was successful.Successful purchases will be notified via email";

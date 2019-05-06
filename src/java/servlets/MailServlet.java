@@ -66,13 +66,13 @@ try{
         
         
         try{
-        String message = "Greetings . Your item " +itemsold + "posted on "  +date + "has found a customer. Avail it to our office in not more than 24 hrs"
-                + "transaction id is "+tid +"" ;
+        String message = "Greetings . Your item " + itemsold + "  posted on  "  + date + "  has found a customer. Avail it to our office in not more than 24 hrs"
+                + " transaction id is "+tid +"" ;
         
        try {
             String subject="Campus Market sales";
           final String from ="mugomwash@gmail.com";
-          final String password="AMOSMUGOMWANGI";
+          final String password="mibmusavpexjnvxm";
           final String username="mugomwash@gmail.com";
           
           Properties props = System.getProperties();
@@ -107,6 +107,7 @@ try{
          System.out.println("message  sent");
         request.setAttribute("message",messag);
         tsn.setMsgsent("yes");
+        response.sendRedirect("ViewTransactions");
         
         }
         catch (Exception e ){
@@ -114,6 +115,7 @@ try{
         String error="mail not sent ";
         request.setAttribute("error",error);
         System.out.println(e.getMessage());
+           response.sendRedirect("ViewTransactions");
         
         }
          txn.commit();
@@ -124,13 +126,14 @@ try{
         
 }
 catch(Exception e ){
+       response.sendRedirect("ViewTransactions");
     
 
 
 }
 finally{
           
-           response.sendRedirect("ViewTransactions");
+        
            
 }
         

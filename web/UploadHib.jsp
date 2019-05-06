@@ -29,7 +29,7 @@
 
 
         %>
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
                     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,7 +85,7 @@
         </nav>
 
 
-        <div style="margin: auto; width: 45%; padding: 10px; background-color: white ">
+        <div style="margin: auto; width: 53%;padding: 1.5em 1.5em 1.5em 1.5em; background-color: white ">
 
             <form method="post" action="PhotoUploadHib" enctype="multipart/form-data" class="text-center border border-light p-5">
                 <p class="h4 mb-4" style="font-size:30px;  font-weight: 900;">Post an item for Sale</p>
@@ -124,6 +124,10 @@
 
                 </select>
                 <br>
+                <strong style="float: left"> <b> Brief Description </b> </strong> <br>
+                <div class="form-group">
+                    <textarea class="form-control rounded-0" name="description"id="exampleFormControlTextarea2" rows="2" placeholder="Brief description"></textarea>
+                </div>
 
                 <strong style="float: left"> <b> Quote a price for the Item </b> </strong> <br>
                 <input type="number" name="price" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Ksh" required >
