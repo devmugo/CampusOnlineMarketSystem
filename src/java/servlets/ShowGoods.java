@@ -36,6 +36,8 @@ public class ShowGoods extends HttpServlet {
         
         List<Upload> goods = new ArrayList<>();
         goods = uploadbean.findUploads();
+        int length = goods.size();
+        System.out.println(length);
         for(Upload up : goods){
           byte[] img = up.getImage();
           String b64 = Base64.getEncoder().encodeToString(img);
@@ -43,7 +45,11 @@ public class ShowGoods extends HttpServlet {
          
       }
         //System.out.println(goods.toString());
-        request.setAttribute("goods", goods);
+        
+     
+         List <Upload> sublist = goods.subList(length-8,length);
+          request.setAttribute("sublist", sublist);
+         request.setAttribute("goods", goods);
         
             
       } 

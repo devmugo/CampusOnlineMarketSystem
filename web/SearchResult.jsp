@@ -112,18 +112,23 @@
             <c:forEach  begin="0" end="5" var="upload" varStatus="vs" items="${searchresults}">
                 <!-- Card -->
 
-                <div class="card mb-3"style="flex: 1 0 22%; max-width: 22%; ">
-                    <div>
-                        <img class="card-img-top" src="data:image/jpg;base64,${upload.b64}" alt="Item" height="200px">
+                <div class="card mb-3 " style="flex: 1 0 22%; max-width: 22% ">
+                    <div  class="view overlay zoom"  style="background-image: url('data:image/jpg;base64,${upload.b64}'); background-repeat:no-repeat;
+                          height:250px;  background-position: center; " >
+                        <div class="mask flex-center rgba-blue-light">
+
+                            <a class="btn btn-primary btn-green" href="DetailsServlet?index=${upload.itemindex}"> More Details</a>
+                        </div>
+
                     </div>
-                    <div class="card-body" style="height:65%">
+                    <div class="card-body mb-2" >
 
                         <!-- Title -->
-                        <h4 class="card-title"><a>${upload.brand}</a></h4>
-                        <!-- Text -->
-                        <p class="card-text"> <b> ${upload.cond} </b> </p> 
-
-                        <p class="card-text">ksh <b> ${upload.price}  </b></p> 
+                        <p>${upload.cond} ${upload.brand} ${upload.category}
+                            <br>
+                        <b>  </b> 
+                        <br>
+                        <b>  ksh ${upload.price}  </b></p> 
 
                         <a class="btn btn-primary"  data-toggle="modal" href="#myModal${vs.index}" id="viewDetailButton${vs.index}" >Buy</a>
                         <!-- Modal -->
@@ -150,7 +155,7 @@
                                     <div class="modal-footer">
 
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                        <a class="btn btn-primary" href="Transactions?index=${upload.itemindex}"> Continue</a>
+                                        <a class="btn btn-primary btn-grey" href="Transactions?index=${upload.itemindex}"> Continue</a>
                                     </div>
                                 </div>
                             </div>
@@ -172,6 +177,7 @@
         </div>
         <jsp:include page="./includes/scripts.jsp"/>
         <script type="text/javascript" src="js/toast_message.js"></script>
+        <jsp:include page="./includes/footer.jsp"/>
 
     </body>
 </html>

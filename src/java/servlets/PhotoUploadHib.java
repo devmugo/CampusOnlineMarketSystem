@@ -50,7 +50,7 @@ public class PhotoUploadHib extends HttpServlet {
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 	    Date date = new Date();
            
-            System.out.println(category);
+            
             Part part = request.getPart("photo") ;
             InputStream in = part.getInputStream();
             ByteArrayOutputStream output = new ByteArrayOutputStream();

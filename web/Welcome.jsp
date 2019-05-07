@@ -101,6 +101,11 @@
             </div>
         </div>
         <div>
+                     
+            
+            
+        </div>
+        <div>
             <!-- Card group -->
            <div class="card-deck" style="padding: 1.5em 1.5em 1.5em 1.5em;">
 
@@ -188,6 +193,8 @@
             </div>
 
         </div>
+          <jsp:include page="./includes/footer.jsp"/>
 
     </body>
+    
 </html>

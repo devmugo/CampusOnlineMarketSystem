@@ -72,7 +72,8 @@
     $(document).ready(function () {
         $('#myTable').DataTable();
     });
-</script>  
+</script> 
+  <jsp:include page="./includes/footer.jsp"/>
 
 </body>
 

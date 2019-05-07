@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-      
+
         <jsp:include page="./includes/global_stylesheets.jsp"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>View Goods</title>
@@ -106,15 +106,22 @@
                 <h5 style="color:black"> ${requestScope.error}  </h5> 
                 <br>
             </div>
-                
-            <div class="card-deck" style="display: flex; flex-wrap: wrap; padding-left: 2% " >
- 
-                <c:forEach  var="upload" varStatus="vs" items="${goods}">
-                    <!-- Card -->
-                    <div class="card mb-3"style="flex: 1 0 22%; max-width: 22%; ">
 
-                        <div style="">
-                            <img class="card-img-top" src="data:image/jpg;base64,${upload.b64}" alt="Card image cap" height="200px">
+            <div class="card-deck" style="display: flex; flex-wrap: wrap; padding-left: 2% " >
+
+                <c:forEach begin="0" end="7" var="upload" varStatus="vs" items="${goods}">
+                    <!-- Card -->
+                    <div class="card mb-3 " style="flex: 1 0 22%; ">
+
+                        <div  class="view overlay zoom"  style="background-image: url('data:image/jpg;base64,${upload.b64}'); background-repeat:no-repeat;
+                              height:350px;  background-position: center; " >
+
+                            <div class="mask flex-center rgba-blue-light">
+
+                                <a class="btn btn-primary btn-green" href="DetailsServlet?index=${upload.itemindex}"> More Details</a>
+                            </div>
+
+
                         </div>
 
                         <div class="card-body  mb-2" >
@@ -126,8 +133,8 @@
                                 <strong>         <p class="card-text"></p> </strong>  
                                 <p class="card-text"></p>
                             </div>
-                                <div>
-                            <a class="btn btn-primary"  data-toggle="modal" href="#myModal${vs.index}" id="viewDetailButton${vs.index}" >Buy</a>
+                            <div>
+                                <a class="btn btn-primary"  data-toggle="modal" href="#myModal${vs.index}" id="viewDetailButton${vs.index}" >Buy</a>
                             </div>
                             <!-- Modal -->
                             <div class="modal fade" id="myModal${vs.index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -167,20 +174,25 @@
 
                 </c:forEach>
             </div>
-                <div style="align-items: center">
-                    <h1 style="padding-left: 39%;color: black">Recent Uploads </h1>
-                    
-                </div>
+            <div style="align-items: center">
+                <h1 style="padding-left: 39%;color: black">Recent Uploads </h1>
+
+            </div>
 
 
             <div class="card-deck" style="display: flex; flex-wrap: wrap; padding-left: 2% " >
- 
-                <c:forEach begin="0" end="9" var="upload" varStatus="vs" items="${goods}">
-                    <!-- Card -->
-                    <div class="card mb-3"style="flex: 1 0 22%; max-width: 22%; ">
 
-                        <div style="background:green">
-                            <img class="card-img-top" src="data:image/jpg;base64,${upload.b64}" alt="Card image cap" height="200px">
+                <c:forEach begin="0" end="7" var="upload" varStatus="vs" items="${sublist}">
+                    <!-- Card -->
+                    <div class="card mb-3"style="flex: 1 0 22%;  ">
+
+                        <div  class="view overlay zoom"  style="background-image: url('data:image/jpg;base64,${upload.b64}'); background-repeat:no-repeat;
+                              height:350px;  background-position: center; " >
+
+                            <div class="mask flex-center rgba-blue-light">
+
+                                <a class="btn btn-primary btn-green" href="DetailsServlet?index=${upload.itemindex}"> More Details</a>
+                            </div>
                         </div>
 
                         <div class="card-body  mb-2" >
@@ -192,11 +204,11 @@
                                 <strong>         <p class="card-text"></p> </strong>  
                                 <p class="card-text"></p>
                             </div>
-                                <div>
-                            <a class="btn btn-primary"  data-toggle="modal" href="#myModal${vs.index}" id="viewDetailButton${vs.index}" >Buy</a>
+                            <div>
+                                <a class="btn btn-primary"  data-toggle="modal" href="#myModa${vs.index}" id="viewDetailButtons${vs.index}" >Buy</a>
                             </div>
                             <!-- Modal -->
-                            <div class="modal fade" id="myModal${vs.index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                            <div class="modal fade" id="myModa${vs.index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
                                  aria-hidden="true">
 
                                 <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
@@ -234,11 +246,12 @@
                 </c:forEach>
             </div>
             <br>
-            
 
 
 
-        <jsp:include page="./includes/scripts.jsp"/>
-        <script type="text/javascript" src="js/toast_message.js"></script>
+
+            <jsp:include page="./includes/scripts.jsp"/>
+            <jsp:include page="./includes/footer.jsp"/>
+            <script type="text/javascript" src="js/toast_message.js"></script>
     </body>
 </html>

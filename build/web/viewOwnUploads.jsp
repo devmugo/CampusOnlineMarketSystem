@@ -185,6 +185,7 @@
 
     </script>
     <jsp:include page="./includes/scripts.jsp"/>
+      <jsp:include page="./includes/footer.jsp"/>
     <script type="text/javascript" src="js/toast_message.js"></script>
 
 </body>

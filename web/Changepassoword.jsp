@@ -59,5 +59,6 @@
 
         </div>
         <jsp:include page="./includes/scripts.jsp"/>
+         <jsp:include page="./includes/footer.jsp"/>
     </body>
 </html>

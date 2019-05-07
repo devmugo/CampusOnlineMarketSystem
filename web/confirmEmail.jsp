@@ -48,7 +48,8 @@
             <p> A link will be sent to your email address and redirect you to change your email address.</p>
             <p> Back to <a href="Login.jsp"> Log In </a>  </p> 
         </div>
-
+                
+ <jsp:include page="./includes/footer.jsp"/>
     </body>
 
 
