@@ -98,7 +98,7 @@
                 <!-- Card -->
                 <div class="card mb-4" style ="">
 
-                    <img src="data:image/jpg;base64,${upload.b64}" height="100%" width="100%">
+                    <img src="data:image/jpg;base64,${upload.b64}" height="460px" width="100%">
 
 
                 </div>

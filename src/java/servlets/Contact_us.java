@@ -45,7 +45,7 @@ public class Contact_us extends HttpServlet {
        transaction.commit();
        success=" Message sent successfully";
        request.setAttribute("success",success);
-       request.getRequestDispatcher("/Contact_Us.jsp").forward(request, response);
+       request.getRequestDispatcher("Welcome.jsp").forward(request, response);
        
         
         
@@ -54,11 +54,11 @@ public class Contact_us extends HttpServlet {
             System.out.println(e.getMessage());
             error="Message not sent.Try again";
             request.setAttribute("error",error);
-           request.getRequestDispatcher("/Contact_Us.jsp").forward(request, response);
+           request.getRequestDispatcher("Welcome.jsp").forward(request, response);
         }
     finally {
             session.close();
-            request.getRequestDispatcher("/Welcome.jsp").forward(request, response);
+            
         }
         
                }

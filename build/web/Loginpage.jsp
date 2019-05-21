@@ -16,18 +16,7 @@
 
     </head>
     <body>
-          <% response.setHeader("Cache-Control", "no-cache,must-revalidate,no-store");
-            response.setHeader("Pragma", "no-cache");
-            response.setHeader("Expires", "0");
-            HttpSession sessionsa = request.getSession(false);
-            String user = (String) sessionsa.getAttribute("user");
-            if (user == null) {
-
-                response.sendRedirect("Login.jsp");
-            }
-
-
-        %>
+          
         <jsp:include page="./includes/toast_message.jsp" />
         <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
 

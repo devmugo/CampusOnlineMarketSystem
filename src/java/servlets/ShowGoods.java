@@ -44,12 +44,20 @@ public class ShowGoods extends HttpServlet {
           up.setB64(b64);
          
       }
-        //System.out.println(goods.toString());
+         request.setAttribute("goods", goods);
+       
         
-     
+     if(length>8){
          List <Upload> sublist = goods.subList(length-8,length);
           request.setAttribute("sublist", sublist);
-         request.setAttribute("goods", goods);
+        
+     }
+     else{
+         List <Upload> sublist = goods;
+         request.setAttribute("sublist", sublist);
+         }
+     
+     
         
             
       } 

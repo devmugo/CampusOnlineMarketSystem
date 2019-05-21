@@ -52,7 +52,7 @@ public class UserServlet extends HttpServlet {
             Users user = new Users(nationalId, firstName, lastName, phone, email, residence, pwencrypt);
             session.save(user);
             transaction.commit();
-            success = "User Added Successfully";
+            success = "User Added Successfully.You can now log in into the system";
             request.setAttribute("success", success);
            
             
@@ -64,7 +64,7 @@ public class UserServlet extends HttpServlet {
           
         } finally {
             session.close();
-             request.getRequestDispatcher("/Login.jsp").forward(request, response);
+             request.getRequestDispatcher("/Register.jsp").forward(request, response);
             
             
         }

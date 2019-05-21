@@ -77,7 +77,7 @@
                     <c:otherwise>
                         <ul class="navbar-nav ml-auto nav-flex-icons">
                             <li class="nav-item">
-                                <a class="nav-link" href="Login.jsp ">Log In</a>
+                                <a class="nav-link" href="Loginpage.jsp">Log In</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Register.jsp">Register</a>
@@ -142,12 +142,13 @@
                         </div>
 
                     </div>
-                    <!-- Card -->
+                   
                 </div>
-                <!-- Card -->
-
-                <!-- Card -->
-                <div id="contact" class="card mb-4" style=" padding: 1.5em 1.5em 1.5em 1.5em;">
+             
+            </div>
+            <div class="card-deck" style="padding: 1.5em 1.5em 1.5em 1.5em; ">
+                
+                 <div id="contact" class="card mb-4" style=" padding: 1.5em 1.5em 1.5em 1.5em;">
 
                     <div style="padding:  0 1.5em 0 1.5em;">
                         <!-- Default form contact -->
@@ -187,9 +188,9 @@
 
                 </div>
 
-
-
-
+                
+                
+                
             </div>
 
         </div>

@@ -42,7 +42,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="/CampusOnlineMarketSystem/#about">About Us</a>
                     </li>
 
 

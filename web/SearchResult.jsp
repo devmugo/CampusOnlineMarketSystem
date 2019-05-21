@@ -43,7 +43,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="/CampusOnlineMarketSystem/#about">About Us</a>
                     </li>
 
 
@@ -54,13 +54,13 @@
                         <ul class="navbar-nav nav-flex-icons" >
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Buy</a>
+                                <a class="nav-link" href="ShowGoods">Buy</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Sell</a>
+                                <a class="nav-link" href="UploadHib.jsp">Sell</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Uploads</a>
+                                <a class="nav-link" href="ViewOwnUploads">Uploads</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -107,60 +107,26 @@
 
 
         </div>
-
+ 
         <div class="card-deck" style="display: flex; flex-wrap: wrap; padding-left: 2% " >
             <c:forEach  begin="0" end="5" var="upload" varStatus="vs" items="${searchresults}">
                 <!-- Card -->
 
-                <div class="card mb-3 " style="flex: 1 0 22%; max-width: 22% ">
-                    <div  class="view overlay zoom"  style="background-image: url('data:image/jpg;base64,${upload.b64}'); background-repeat:no-repeat;
-                          height:250px;  background-position: center; " >
-                        <div class="mask flex-center rgba-blue-light">
+                <div class="card mb-3 view overlay zoom " style="flex: 1 0 22%; max-width: 22% ">
+                <div  class=""  style=" background-repeat:no-repeat;
+                              height:250px;  background-position: center; " >
+                            <img src="data:image/jpg;base64,${upload.b64}" height="250px" width="100%">
+                            <div class="mask flex-center rgba-blue-light">
 
-                            <a class="btn btn-primary btn-green" href="DetailsServlet?index=${upload.itemindex}"> More Details</a>
-                        </div>
-
-                    </div>
-                    <div class="card-body mb-2" >
-
-                        <!-- Title -->
-                        <p>${upload.cond} ${upload.brand} ${upload.category}
-                            <br>
-                        <b>  </b> 
-                        <br>
-                        <b>  ksh ${upload.price}  </b></p> 
-
-                        <a class="btn btn-primary"  data-toggle="modal" href="#myModal${vs.index}" id="viewDetailButton${vs.index}" >Buy</a>
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal${vs.index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-                             aria-hidden="true">
-
-                            <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-
-
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle" style="color: black; font-weight: bold">Confirm Purchase</h5>
-
-                                    </div>
-                                    <div class="modal-body" style="color: black">
-                                        <h4>You are about to purchase ${upload.brand} ${upload.category}</h4>
-                                        <p >Working Condition :<b> ${upload.cond} </b> </p>
-                                        <p>Which is  : <b> ${upload.age} </b> </p>
-                                        <p>At a price of :<b>  ${upload.price}</b> </p>
-
-
-                                    </div>
-                                    <div class="modal-footer">
-
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                        <a class="btn btn-primary btn-grey" href="Transactions?index=${upload.itemindex}"> Continue</a>
-                                    </div>
-                                </div>
+                                <a class="btn btn-primary btn-green" href="DetailsServlet?index=${upload.itemindex}"> More Details</a>
                             </div>
-                        </div>
-
+                </div>
+                    <div class="card-body mb-2" >
+                        <div style="height:50%">
+                        <p> ${upload.brand} ${upload.category}
+                            <br>
+                            <b>  ksh ${upload.price}  </b></p> 
+                     </div>
                     </div>
 
                 </div>
