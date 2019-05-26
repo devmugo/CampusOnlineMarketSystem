@@ -58,7 +58,7 @@ try{
         TransactionClass tsn = (TransactionClass) session.get(TransactionClass.class, index);
         String id = tsn.getBuyerid();
         String itemsold = tsn.getItemsold();
-        Date date = tsn.getDate();
+        String date = tsn.getDate();
         int tid = tsn.getTransactionId();
 
         String hql = "from Users user where user.nationalId=:id";

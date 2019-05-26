@@ -28,21 +28,23 @@ public class TransactionClass {
     private String buyerid;
     private String sellerid;
     private String itemsold;
-    private Date date;
+    private String idate;
     private String msgsent;
    private String itemdelivered;
+   private Double  price;
 
     public TransactionClass() {
     }
 
-    public TransactionClass(String sellerid, String buyerid, String itemsold, Date date,String msgsent,String itemdelivered) {
+    public TransactionClass(String sellerid, String buyerid, String itemsold, String idate,String msgsent,String itemdelivered,Double price) {
         
         this.buyerid = buyerid;
         this.sellerid = sellerid;
         this.itemsold = itemsold;
-        this.date = date;
+        this.idate = idate;
         this.msgsent=msgsent;
          this.itemdelivered = itemdelivered;
+         this.price=price;
     }
 
    
@@ -75,12 +77,12 @@ public class TransactionClass {
         this.itemsold = itemsold;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        return idate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDate(String date) {
+        this.idate = date;
     }
      public String getMsgsent() {
         return msgsent;
@@ -98,10 +100,21 @@ public class TransactionClass {
         this.itemdelivered = itemdelivered;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
-        return "TransactionClass{" + "transactionId=" + transactionId + ", buyerid=" + buyerid + ", sellerid=" + sellerid + ", itemsold=" + itemsold + ", date=" + date + ", msgsent=" + msgsent + ", itemdelivered=" + itemdelivered + '}';
+        return "TransactionClass{" + "transactionId=" + transactionId + ", buyerid=" + buyerid + ", sellerid=" + sellerid + ", itemsold=" + itemsold + ", date=" + idate + ", msgsent=" + msgsent + ", itemdelivered=" + itemdelivered + ", price=" + price + '}';
     }
+    
+
+   
     
     
      

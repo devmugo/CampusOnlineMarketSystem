@@ -115,7 +115,7 @@
 
                         <div  class=""  style=" background-repeat:no-repeat;
                               height:250px;  background-position: center; " >
-                            <img src="data:image/jpg;base64,${upload.b64}" height="250px" width="100%">
+                            <img style="width:auto;" src="data:image/jpg;base64,${upload.b64}" height="250px">
                             <div class="mask flex-center rgba-blue-light">
 
                                 <a class="btn btn-primary btn-green" href="DetailsServlet?index=${upload.itemindex}"> More Details</a>
@@ -158,7 +158,7 @@
 
                         <div   style=" background-repeat:no-repeat;
                               height:250px;  background-position: center; " >
-                            <img src="data:image/jpg;base64,${upload.b64}" height="250px" width="100%">
+                            <img style="width:auto;" src="data:image/jpg;base64,${upload.b64}" height="250px" >
 
                             <div class="mask flex-center rgba-blue-light">
 

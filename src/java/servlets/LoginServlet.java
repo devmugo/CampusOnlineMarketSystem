@@ -84,7 +84,7 @@ public class LoginServlet extends HttpServlet {
                sessionScope.setAttribute("loggedIn",false);
                 error = "Wrong user name or password ";
                 request.setAttribute("error", error);
-               request.getRequestDispatcher("Login.jsp").forward(request, response);
+               request.getRequestDispatcher("Loginpage.jsp").forward(request, response);
                 
         }
         }
@@ -92,7 +92,7 @@ public class LoginServlet extends HttpServlet {
                error= "Wrong Password or User name ";
                request.setAttribute("error",error);
                sessionScope.setAttribute("loggedIn",false);
-               request.getRequestDispatcher("Login.jsp").forward(request, response);
+               request.getRequestDispatcher("Loginpage.jsp").forward(request, response);
                 
          }
          finally{

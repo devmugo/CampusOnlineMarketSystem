@@ -52,7 +52,7 @@ try{
         TransactionClass tsn = (TransactionClass) session.get(TransactionClass.class, index);
         String id = tsn.getSellerid();
         String itemsold = tsn.getItemsold();
-        Date date = tsn.getDate();
+        String idate = tsn.getDate();
         int tid = tsn.getTransactionId();
 
         String hql = "from Users user where user.nationalId=:id";
@@ -66,8 +66,8 @@ try{
         
         
         try{
-        String message = "Greetings . Your item " + itemsold + "  posted on  "  + date + "  has found a customer. Avail it to our office in not more than 24 hrs"
-                + " transaction id is "+tid +"" ;
+        String message = "Greetings . Your item " + itemsold + "  posted on  "  + idate + "  has found a customer. Avail it to our office in not more than 24 hrs"
+                + " transaction id is "+tid +" Note: A 10% commission service fee is chargable. Thank you " ;
         
        try {
             String subject="Campus Market sales";

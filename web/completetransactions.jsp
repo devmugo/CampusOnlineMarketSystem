@@ -43,6 +43,12 @@
                     </th>
                     <th class="th-sm"> <b> Item Sold   </b>
                     </th>
+                    <th class="th-sm"> <b> Price  </b>
+                    </th>
+                    <th class="th-sm"> <b> Commission  </b>
+                    </th>
+                    <th class="th-sm"> <b> Amount Payable  </b>
+                    </th>
                  </tr>
             </thead>
             <tbody>
@@ -53,6 +59,9 @@
                         <td>${trns.buyerid}</td>
                         <td>${trns.datedone}</td> 
                         <td>${trns.itemsold}</td>
+                        <td>${trns.price}</td>
+                        <td>${trns.commission}</td>
+                        <td>${trns.amountpaid}</td>
                         
                         
                     </tr>  

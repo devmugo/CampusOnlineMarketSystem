@@ -52,12 +52,16 @@ public class CompletedTransactions extends HttpServlet {
         String buyerid = transn.getBuyerid();
         String sellerid = transn.getSellerid();
         String itemsold = transn.getItemsold();
+        Double price =transn.getPrice();
+        int iprice =price.intValue();
+        int amountpaid = (int) (iprice*0.9);
+        int commission = (iprice-amountpaid);
         
         Date date = new Date(); 
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");  
         String datedone = formatter.format(date);  
         
-        DoneTransactions done = new DoneTransactions(transid,datedone,itemsold,sellerid,buyerid);
+        DoneTransactions done = new DoneTransactions(transid,datedone,itemsold,sellerid,buyerid,price,amountpaid,commission);
         
          if(transn!=null){
             session.delete(transn);
@@ -69,11 +73,13 @@ public class CompletedTransactions extends HttpServlet {
          
          txn.commit();
          session.close();
+          response.sendRedirect("ViewTransactions");
         
        
       }
       catch(Exception e ){
           System.out.println(e.getMessage());
+           response.sendRedirect("ViewTransactions");
       }
       finally{
        response.sendRedirect("ViewTransactions");

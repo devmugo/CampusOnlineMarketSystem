@@ -44,6 +44,9 @@
                     </th>
                     <th class="th-sm"> <b> Item Sold   </b>
                     </th>
+                    </th>
+                    <th class="th-sm"> <b> price  </b>
+                    </th>
                    
                     <th class="th-sm"> <b> Inform Seller  </b>
                     </th>
@@ -66,6 +69,8 @@
                         <td>${txn.sellerid}</td>
                         <td>${txn.date}</td> 
                         <td>${txn.itemsold} </td>
+                        <td>${txn.price} </td>
+                        
                         <c:choose>
                             <c:when test="${txn.msgsent=='yes'}">
                                 
