@@ -13,27 +13,17 @@
         <title>Welcome  </title>
 
     </head>
-    <body >
+    <body style="padding: 1.5em 0em 1.5em 0em;">
         <!--Navbar -->
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top">
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark white fixed-top" style="height:70px;">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact Us</a>
-                    </li>
+                    <a class="navbar-brand" href="#" style="margin-left: -250px">
+                        <img src="img/logo.png" height="50" width="200" class="d-inline-block align-top"
+                             alt="mdb logo"> 
+                    </a>
 
                 </ul>
                 <c:choose>
@@ -41,20 +31,19 @@
                         <% response.setHeader("Cache-Control", "no-cache,must-revalidate,no-store");
                             response.setHeader("Pragma", "no-cache");
                             response.setHeader("Expires", "0");
-
                             HttpSession sessionsa = request.getSession(false);
                             String user = (String) sessionsa.getAttribute("user");
                         %>
                         <ul class="navbar-nav nav-flex-icons" style="">
 
                             <li class="nav-item">
-                                <a class="nav-link" href="ShowGoods">Buy</a>
+                                <a class="nav-link" href="#" style="background: black; color: white;font-weight: bold"></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="UploadHib.jsp">Sell</a>
+                                <a class="nav-link" href="#"style="background: black; color: white;font-weight: bold"></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="ViewOwnUploads">Uploads</a>
+                                <a class="nav-link" href="#" style="background: black; color: white;font-weight: bold"></a>
                             </li>
                         </ul>
                         <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -64,10 +53,10 @@
                                      alt="avatar image" height="35">
                             </a>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><%=user%></a>
+                                <a class="nav-link" href="#" style="color: black"><%=user%></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="LogOut">Log Out</a>
+                                <a class="nav-link" href="LogOut" style="color: black">Log Out</a>
                             </li>
 
 
@@ -77,125 +66,204 @@
                     <c:otherwise>
                         <ul class="navbar-nav ml-auto nav-flex-icons">
                             <li class="nav-item">
-                                <a class="nav-link" href="Loginpage.jsp">Log In</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Register.jsp">Register</a>
+                                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="" data-toggle="modal" data-target="#modalContactForm" >CONTACT US</a>
                             </li>
 
-                        </c:otherwise>
-                    </c:choose>
+                            <li class="nav-item">
+                                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="#" >FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-outline-default waves-effect btn-sm align-middle " data-toggle="modal" data-target="#elegantModalForm"  >LOG IN</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="Register.jsp" >REGISTER</a>
+                            </li>
+                        </ul>
+
+                    </c:otherwise>
+                </c:choose>
 
             </div>
         </nav>
+
         <!--/.Navbar -->
-        <div style="background-image: url('img/back.jpg'); 
-             background-repeat:no-repeat; background-size: cover; width:100%; height: 700px">
+        <div style="background-image: url('img/campus-market-big.jpg'); 
+             background-repeat:no-repeat; background-size: cover; width:100%; height: 500px;margin-top: -40px">
             <div class="description" style="padding-top: 13%">
-                <h1 style="font-size:60px;">Campus Online Market</h1>
+                <h1 style="font-size:60px; color: black">Campus Online Market</h1>
                 <br>
 
-                <p class="summary" style="font-size:30px;">Everything Sells at your Comfort .</p>
-                <p class="summary" style="font-size:30px;"> " One Stop shopping Website for the Comrades.. "</p>
+                <strong>   <p class="summary" style="font-size:30px;color: black">Everything Sells at your Comfort .</p> </strong> 
+                <strong>       <p class="summary" style="font-size:30px;color: black"> " One Stop shopping Website for the Comrades.. "</p> </strong> 
 
             </div>
         </div>
         <div>
-                     
-            
-            
+            <h2> Fresh Recommendations</h2>
         </div>
-        <div>
-            <!-- Card group -->
-           <div class="card-deck" style="padding: 1.5em 1.5em 1.5em 1.5em;">
+        <div class="card-deck " style="display: flex; flex-wrap: wrap; padding: 1.5em 0em 1.5em 0em;
+             " >
+            <c:out value="${mesage }"></c:out>
 
+            <c:forEach  end="7" var="upload" varStatus="vs" items="${sublist}">
                 <!-- Card -->
-                <div id="about" class="card mb-4" style="padding: 1.5em 1.5em 1.5em 1.5em;">
-                   <!-- Card -->
-                    <div class="card card-image" style="background-image:url('img/back.jpg');">
+                <div class="card mb-3 view overlay zoom " style="flex: 1 0 22%; height:auto">
 
-                        <!-- Content -->
-                        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                            <div>
-                                
-                                <h3 class="card-title pt-2"><strong>About Us</strong></h3>
-                                <h3 ><strong><u>How we Work </u></strong></h3>
-                                <p>The Campus Online Market Operates like a simple market only that you are selling your goods online.
-                                    If you have an item on sale you just post it to the website then RELAX and wait for your good to get a buyer.
-                                    Once your item gets a customer you will be notified via e-mail and you will be required to avail it to our offices 
-                                    after which you will sign a form to show that you have availed the goods.You are required to collect your payments
-                                    a day after availing your goods.<br>
-                                    <strong>Note: Each commodity is eligible to a 10% service fee</strong>
-                                    <br>
-                                    <h3 ><strong><u>Our Offices </u></strong></h3>
-                                    Our offices are located in Njokerio near the mosque Opposite Queens hostel <br>
-                                    We are Open from mon - sat from 8 am to 5 pm.<br>
-                                    You can call on <strong>0700896543</strong> <br>
-                                    or <br>
-                                    Visit us at any time with in the working hours <br>
-                                    or <br>
-                                    Write to us and let us know your problem ---> <br>
-                                   
-                                   </p>
-                                
-                            </div>
+                    <div  class=""  style=" background-repeat:no-repeat;
+                          height:250px;  background-position: center; " >
+                        <img style="max-width: 100%;display: block; height: 100%" src="data:image/jpg;base64,${upload.b64}">
+                        <div class="mask flex-center rgba-blue-light">
+
+                            <a class="btn btn-primary btn-green" href="" data-toggle="modal" data-target="#centralModalSm" > More Details</a>
+                        </div>
+                        <div>
+                            <p style="background-color: green;font-weight: bold;max-width: 50px">New</p>
                         </div>
 
+
                     </div>
-                   
+
+                    <div class="card-body  mb-2" >
+                        <div style="height:50%">
+
+                            <p>${upload.brand}  ${upload.category}</p>
+
+                            <p > Ksh ${upload.price}</p>  
+
+                        </div>
+
+
+
+                    </div>
+
                 </div>
-             
-            </div>
-            <div class="card-deck" style="padding: 1.5em 1.5em 1.5em 1.5em; ">
-                
-                 <div id="contact" class="card mb-4" style=" padding: 1.5em 1.5em 1.5em 1.5em;">
 
-                    <div style="padding:  0 1.5em 0 1.5em;">
-                        <!-- Default form contact -->
-                        <form id="contact_us" name="contact_us" action="Contact_us" method="POST">
-                            <h5 class="card-header  white-text text-center py-4" style="background-color: #00a087;font-size: 30px">
-                                <strong>Contact us</strong>
-                            </h5>
-                            <br>
-                            <strong style="float: left"> <b> Enter Your Name </b> </strong>
-                            <input type="text" id="defaultContactFormName" class="form-control mb-4" name="name" placeholder="Name">
 
-                            <strong style="float: left"> <b> Enter Your Phone Number</b> </strong>
-                            <input type="text" name="number" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Phone Number">
 
-                            <strong style="float: left"> <b> Subject of the message </b> </strong>
-                            <select class="browser-default custom-select mb-4" name="subject">
 
-                                <option value="default_item" >Default Items</option>
-                                <option value="details">Transaction details</option>
-                                <option value="contact">Seller Contacts</option>
-                                <option value="features">Feature request</option>
-                                <option value="forgot_password">Forgot Password</option>
-                                <option value="Other">Other(Specify in the message)</option>
-                            </select>
+            </c:forEach>
+        </div>
 
-                            <strong style="float: left"> <b> Message </b> </strong>
-                            <div class="form-group">
-                                <textarea class="form-control rounded-0" name="message"id="exampleFormControlTextarea2" rows="2" placeholder="Message"></textarea>
+        <!-- Modal -->
+        <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <!--Content-->
+                <div class="modal-content form-elegant">
+                    <!--Header-->
+                    <div class="modal-header text-center">
+                        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Log In</strong></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body mx-4">
+                        <form method="post" action="LoginServlet">
+                            <!--Body-->
+                            <div class="md-form mb-5">
+                                <input type="text" id="Form-email1" class="form-control validate" name="username">
+                                <label for="Form-email1">Your email</label>
                             </div>
 
-                            <br>
-                            <button class="btn btn-info" style=" width: 200px;"type="submit">Send</button>
-                            <br>  <br>  
+                            <div class="md-form pb-3">
+                                <input type="password" id="Form-pass1" class="form-control validate" name="password">
+                                <label for="Form-pass1">Your password</label>
 
+                            </div>
+
+                            <div class="text-center mb-3">
+                                <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Log In</button>
+                            </div>
                         </form>
+                        <p class="font-small blue-text d-flex justify-content-end" style="font-size: 20px">Forgot <a href="confirmEmail.jsp" class="blue-text ml-1">
+                                Password?</a></p>
+
+                        <!--Footer-->
+                        <div class="modal-footer mx-5 pt-3 mb-1">
+                            <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="Register.jsp" class="blue-text ml-1">
+                                    Register</a></p>
+                        </div>
                     </div>
-
+                    <!--/.Content-->
                 </div>
-
-                
-                
-                
             </div>
-
         </div>
-          <jsp:include page="./includes/footer.jsp"/>
+        <!-- Modal -->
+
+        <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Write to us</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="Contact_us" method="post">
+                        <div class="modal-body mx-3">
+                            <div class="md-form mb-5">
+                                <i class="fas fa-user prefix grey-text"></i>
+                                <input type="text" id="form34" class="form-control validate" name="name">
+                                <label data-error="wrong" data-success="right" for="form34">Your name</label>
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <i class="fas fa-envelope prefix grey-text"></i>
+                                <input type="email" id="form29" class="form-control validate" name="email">
+                                <label data-error="wrong" data-success="right" for="form29">Your email</label>
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <i class="fas fa-tag prefix grey-text"></i>
+                                <input type="text" id="form32" class="form-control validate" name="subject">
+                                <label data-error="wrong" data-success="right" for="form32">Subject</label>
+                            </div>
+
+                            <div class="md-form">
+                                <i class="fas fa-pencil prefix grey-text"></i>
+                                <textarea type="text" id="form8" class="md-textarea form-control" rows="3" name="message"></textarea>
+                                <label data-error="wrong" data-success="right" for="form8">Your message</label>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button class="btn btn-unique" type="submit">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Central Modal Small -->
+        <div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+
+            <!-- Change class .modal-sm to change the size of the modal -->
+            <div class="modal-dialog modal-sm modal-danger" role="document">
+
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title w-100" id="myModalLabel" style="color:black">First you need to log in</h4>
+                        
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn red btn-sm" data-dismiss="modal">Close</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Central Modal Small -->
+
+        <jsp:include page="./includes/scripts.jsp"/>
+        <script type="text/javascript" src="js/toast_message.js"></script>
+        <jsp:include page="./includes/footer2.jsp"/>
+
 
     </body>
-    
+
 </html>

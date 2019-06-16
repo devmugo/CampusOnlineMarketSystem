@@ -57,8 +57,12 @@ try{
         //create an instance of transaction class
         TransactionClass tsn = (TransactionClass) session.get(TransactionClass.class, index);
         String id = tsn.getBuyerid();
-        String itemsold = tsn.getItemsold();
-        String date = tsn.getDate();
+        String item = tsn.getItem();
+        String brand = tsn.getBrand();
+        
+        String itemsold = brand.concat(" " + item );
+        
+        String date = tsn.getIdate();
         int tid = tsn.getTransactionId();
 
         String hql = "from Users user where user.nationalId=:id";
@@ -113,7 +117,7 @@ try{
          System.out.println("message  sent");
         request.setAttribute("message",messag);
         tsn.setItemdelivered("yes");
-        response.sendRedirect("ViewTransactions");
+        
         
         }
         catch (Exception e ){
@@ -121,7 +125,7 @@ try{
         String error="mail not sent ";
         request.setAttribute("error",error);
         System.out.println(e.getMessage());
-           response.sendRedirect("ViewTransactions");
+       
         
         }
          txn.commit();
@@ -132,12 +136,13 @@ try{
         
 }
 catch(Exception e ){
-       response.sendRedirect("ViewTransactions");
+      
     
 
 
 }
 finally{
+    response.sendRedirect("ViewTransactions");
           
         
            

@@ -42,7 +42,7 @@ public class ViewGoodsAdmin extends HttpServlet {
         request.setAttribute("alluploads", alluploads);
         RequestDispatcher rd = request.getRequestDispatcher("ViewUploadsAdmin.jsp");
         rd.forward(request, response);
-        System.out.println(alluploads);
+      
 
     }
 

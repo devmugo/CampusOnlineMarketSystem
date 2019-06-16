@@ -54,7 +54,7 @@ public class DetailsServlet extends HttpServlet {
          
       }
             request.setAttribute("upload", upload);
-            System.out.println(upload);
+         
             request.getRequestDispatcher("showdetails.jsp").forward(request, response);
              session.close();
 

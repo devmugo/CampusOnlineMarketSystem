@@ -16,7 +16,7 @@
         <title>View Goods</title>
         <link href="css/toast_message.css" rel="stylesheet"/>
     </head>
-    <body>
+    <body >
         <jsp:include page="./includes/toast_message.jsp" />
         <% response.setHeader("Cache-Control", "no-cache,must-revalidate,no-store");
             response.setHeader("Pragma", "no-cache");
@@ -25,73 +25,69 @@
             String user = (String) sessionsa.getAttribute("user");
             if (user == null) {
 
-                response.sendRedirect("Login.jsp");
+                response.sendRedirect("Home");
             }
 
 
         %>
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
+       
+
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark white fixed-top" style="height:70px;">
+
+            
             <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul class="navbar-nav mr-auto">
+                    <a class="navbar-brand" href="#" style="margin-left: -250px">
+                        <img src="img/logo.png" height="50" width="200" class="d-inline-block align-top"
+                             alt="mdb logo"> 
+                    </a>
+
+                </ul>
+
+
+                <ul class="navbar-nav nav-flex-icons" style="">
+
+
                     <li class="nav-item">
-                        <a class="nav-link" href="/CampusOnlineMarketSystem/">Home</a>
+                        <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="UploadHib.jsp" style="background: black; color: white;font-weight: bold">Sell</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="ViewOwnUploads" style="background: black; color: white;font-weight: bold">Uploads</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item ">
+                        <a class="nav-link p-0" href="#">
+                            <img src="img/Profile.png" class="rounded-circle z-depth-0"
+                                 alt="avatar image" height="35">
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/CampusOnlineMarketSystem/#about">About Us</a>
+                        <a class="nav-link" href="#" style="color: black;font-weight: bold"><%=user%></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="#" >FAQ</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="LogOut" >LOG OUT</a>
                     </li>
 
 
                 </ul>
-                <c:choose>
-                    <c:when test="${sessionScope.loggedIn==true}">
-
-                        <ul class="navbar-nav nav-flex-icons" >
 
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="UploadHib.jsp">Sell</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="ViewOwnUploads">Uploads</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav ml-auto nav-flex-icons">
-
-                            <a class="nav-link p-0" href="#">
-                                <img src="img/Profile.png" class="rounded-circle z-depth-0"
-                                     alt="avatar image" height="35">
-                            </a>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><%=user%></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="LogOut">Log Out</a>
-                            </li>
-
-
-                        </ul>
-                    </c:when>
-
-                    <c:otherwise>
-                        <ul class="navbar-nav ml-auto nav-flex-icons">
-                            <li class="nav-item">
-                                <a class="nav-link" href="Login.jsp ">Log In</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Register.jsp">Register</a>
-                            </li>
-
-                        </c:otherwise>
-                    </c:choose>
 
             </div>
-        </nav> 
+        </nav>
+
+
         <br>  <br>  <br>
         <div class="search_button" style=" height: 90px; ">
             <!-- Search form -->
@@ -102,12 +98,13 @@
                 <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
             </form>
             <div style="max-width: 100%;margin-left: 30px; height: 50px">
-                <h5 style="color:green; ">   ${requestScope.success} </h5> 
-                <h5 style="color:black"> ${requestScope.error}  </h5> 
+                <h5 style="color:lightgreen; background-color: darkgreen">   ${requestScope.success} </h5> 
+                <h5 style="color:red;background-color:darkred"> ${requestScope.error}  </h5>  
                 <br>
             </div>
 
-            <div class="card-deck " style="display: flex; flex-wrap: wrap; padding-left: 2% " >
+            <div class="card-deck " style="display: flex; flex-wrap: wrap; padding-left: 2%
+                 " >
 
                 <c:forEach  end="7" var="upload" varStatus="vs" items="${goods}">
                     <!-- Card -->
@@ -115,7 +112,7 @@
 
                         <div  class=""  style=" background-repeat:no-repeat;
                               height:250px;  background-position: center; " >
-                            <img style="width:auto;" src="data:image/jpg;base64,${upload.b64}" height="250px">
+                            <img style="max-width: 100%;display: block; height: 100%" src="data:image/jpg;base64,${upload.b64}">
                             <div class="mask flex-center rgba-blue-light">
 
                                 <a class="btn btn-primary btn-green" href="DetailsServlet?index=${upload.itemindex}"> More Details</a>
@@ -133,7 +130,7 @@
 
                             </div>
 
-                          
+
 
                         </div>
 
@@ -144,8 +141,8 @@
 
                 </c:forEach>
             </div>
-            <div style="align-items: center">
-                <h1 style="padding-left: 39%;color: black">Recent Uploads </h1>
+            <div style="background-color: black">
+                <h1 style="padding-left: 9%;color: white">Recent Uploads </h1>
 
             </div>
 
@@ -154,11 +151,11 @@
 
                 <c:forEach begin="0" end="7" var="upload" varStatus="vs" items="${sublist}">
                     <!-- Card -->
-                    <div class="card mb-3 view overlay zoom"style="flex: 1 0 22%;  ">
+                    <div class="card mb-3 view overlay zoom"style="flex: 1 0 22%;height:auto  ">
 
                         <div   style=" background-repeat:no-repeat;
-                              height:250px;  background-position: center; " >
-                            <img style="width:auto;" src="data:image/jpg;base64,${upload.b64}" height="250px" >
+                               height:250px;  background-position: center; " >
+                            <img style="max-width: 100%;display: block; height: 100%" src="data:image/jpg;base64,${upload.b64}">
 
                             <div class="mask flex-center rgba-blue-light">
 
@@ -167,15 +164,15 @@
                         </div>
 
                         <div class="card-body  mb-2" >
-                              <div style="height:50%">
+                            <div style="height:50%">
 
                                 <p>${upload.brand}  ${upload.category}</p>
 
                                 <p >Ksh ${upload.price}</p>  
 
                             </div>
-                          
-                           
+
+
 
                         </div>
 
@@ -192,7 +189,7 @@
 
 
             <jsp:include page="./includes/scripts.jsp"/>
-            <jsp:include page="./includes/footer.jsp"/>
+            <jsp:include page="./includes/footer2.jsp"/>
             <script type="text/javascript" src="js/toast_message.js"></script>
     </body>
 </html>

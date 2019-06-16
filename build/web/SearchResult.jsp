@@ -24,77 +24,74 @@
             String user = (String) sessionsa.getAttribute("user");
             if (user == null) {
 
-                response.sendRedirect("Login.jsp");
+                response.sendRedirect("Home");
             }
 
 
         %>
+        
 
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="ShowGoods">Back</a>
+
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark white fixed-top" style="height:70px;">
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+        <ul class="navbar-nav mr-auto">
+           
+            
+            <a class="navbar-brand" href="#" style="margin-left: -250px">
+                <img src="img/logo.png" height="50" width="200" class="d-inline-block align-top"
+                     alt="mdb logo"> 
+            </a>
+
+        </ul>
+
+
+        <ul class="navbar-nav nav-flex-icons" style="">
+
+
+            <li class="nav-item">
+                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="ShowGoods" >Buy</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="UploadHib.jsp" >Sell</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="ViewOwnUploads" >Uploads</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item ">
+                <a class="nav-link p-0" href="#">
+                    <img src="img/Profile.png" class="rounded-circle z-depth-0"
+                         alt="avatar image" height="35">
+                </a>
+            </li>
+         
+               <li class="nav-item">
+                   <a class="nav-link" href="#" style="color: black;font-weight: bold"><%=user%></a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/CampusOnlineMarketSystem/#about">About Us</a>
-                    </li>
-
-
-                </ul>
-                <c:choose>
-                    <c:when test="${sessionScope.loggedIn==true}">
-
-                        <ul class="navbar-nav nav-flex-icons" >
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="ShowGoods">Buy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="UploadHib.jsp">Sell</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="ViewOwnUploads">Uploads</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav ml-auto nav-flex-icons">
-
-                            <a class="nav-link p-0" href="#">
-                                <img src="img/Profile.png" class="rounded-circle z-depth-0"
-                                     alt="avatar image" height="35">
-                            </a>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><%=user%></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="LogOut">Log Out</a>
-                            </li>
+          
+            <li class="nav-item">
+                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="#" >FAQ</a>
+            </li>
+            
+           
+            <li class="nav-item">
+                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="LogOut" >LOG OUT</a>
+            </li>
 
 
-                        </ul>
-                    </c:when>
+        </ul>
 
-                    <c:otherwise>
-                        <ul class="navbar-nav ml-auto nav-flex-icons">
-                            <li class="nav-item">
-                                <a class="nav-link" href="Login.jsp ">Log In</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Register.jsp">Register</a>
-                            </li>
 
-                        </c:otherwise>
-                    </c:choose>
 
-            </div>
-        </nav>
-        <div style="max-width:100%;text-align: center;">
+    </div>
+</nav>
+
+        <div style="max-width:100%; padding-left: 30px; margin-top: 80px">
             <h1 style="color: black; "> search results </h1>
         </div>
         <div style="height: 30px; "> 
@@ -115,7 +112,7 @@
                 <div class="card mb-3 view overlay zoom " style="flex: 1 0 22%; max-width: 22% ">
                 <div  class=""  style=" background-repeat:no-repeat;
                               height:250px;  background-position: center; " >
-                            <img style="width:auto;" src="data:image/jpg;base64,${upload.b64}" height="250px" >
+                           <img style="max-width: 100%;display: block; max-height: 100%" src="data:image/jpg;base64,${upload.b64}">
                             <div class="mask flex-center rgba-blue-light">
 
                                 <a class="btn btn-primary btn-green" href="DetailsServlet?index=${upload.itemindex}"> More Details</a>
@@ -125,7 +122,7 @@
                         <div style="height:50%">
                         <p> ${upload.brand} ${upload.category}
                             <br>
-                            <b>  ksh ${upload.price}  </b></p> 
+                             ksh ${upload.price}  </p> 
                      </div>
                     </div>
 
@@ -143,7 +140,7 @@
         </div>
         <jsp:include page="./includes/scripts.jsp"/>
         <script type="text/javascript" src="js/toast_message.js"></script>
-        <jsp:include page="./includes/footer.jsp"/>
+        <jsp:include page="./includes/footer2.jsp"/>
 
     </body>
 </html>

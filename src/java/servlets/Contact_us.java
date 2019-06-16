@@ -37,7 +37,7 @@ public class Contact_us extends HttpServlet {
         try{
         Transaction transaction = session.beginTransaction();
         String name = request.getParameter("name");
-        String number = request.getParameter("number");
+        String number = request.getParameter("email");
         String subject = request.getParameter("subject");
         String message= request.getParameter("message");
        Messages messag = new Messages(name,number,subject,message);

@@ -24,74 +24,78 @@
             String user = (String) sessionsa.getAttribute("user");
             if (user == null) {
 
-                response.sendRedirect("Login.jsp");
+                response.sendRedirect("Home");
             }
 
 
         %>
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top">
+        
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/CampusOnlineMarketSystem/">Home</a>
+
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark white fixed-top" style="height:70px;">
+
+   
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+        <ul class="navbar-nav mr-auto">
+            <a class="navbar-brand" href="#" style="margin-left: -250px">
+                <img src="img/logo.png" height="50" width="200" class="d-inline-block align-top"
+                     alt="mdb logo"> 
+            </a>
+
+        </ul>
+
+
+        <ul class="navbar-nav nav-flex-icons" style="">
+
+
+            <li class="nav-item">
+                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="ShowGoods" >Buy</a>
+            </li>
+           
+            <li class="nav-item">
+                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="ViewOwnUploads">Uploads</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item ">
+                <a class="nav-link p-0" href="#">
+                    <img src="img/Profile.png" class="rounded-circle z-depth-0"
+                         alt="avatar image" height="35">
+                </a>
+            </li>
+         
+               <li class="nav-item">
+                   <a class="nav-link" href="#" style="color: black;font-weight: bold"><%=user%></a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/CampusOnlineMarketSystem/#about">About Us</a>
-                    </li>
-
-
-                </ul>
-
-
-
-                <ul class="navbar-nav nav-flex-icons" >
+          
+            <li class="nav-item">
+                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="#" >FAQ</a>
+            </li>
+            
+           
+            <li class="nav-item">
+                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="LogOut" >LOG OUT</a>
+            </li>
 
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="ShowGoods">Buy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ViewOwnUploads">Uploads</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto nav-flex-icons">
-
-                    <a class="nav-link p-0" href="#">
-                        <img src="img/Profile.png" class="rounded-circle z-depth-0"
-                             alt="avatar image" height="35">
-                    </a>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><%=user%></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="LogOut">Log Out</a>
-                    </li>
+        </ul>
 
 
-                </ul>
+
+    </div>
+</nav>
 
 
 
 
-
-
-            </div>
-        </nav>
-
-
-        <div style="margin: auto; width: 53%;padding: 1.5em 1.5em 1.5em 1.5em; background-color: white ">
+        <div style="margin: auto; width: 42%;padding: 1.5em 1.5em 1.5em 1.5em; background-color: white ">
 
             <form method="post" action="PhotoUploadHib" enctype="multipart/form-data" class="text-center border border-light p-5">
                 <p class="h4 mb-4" style="font-size:30px;  font-weight: 900;">Post an item for Sale</p>
                 <div>
-                    <h5 style="color:green;">   ${requestScope.success} </h5> 
-                    <h5 style="color:red"> ${requestScope.error}  </h5> 
+                    <h5 style="color:lightgreen; background-color: darkgreen">   ${requestScope.success} </h5> 
+                    <h5 style="color:red;background-color:darkred"> ${requestScope.error}  </h5> 
                     <br>
                 </div>
                 <strong style="float: left"> <b> Enter Item Category </b> </strong>
@@ -139,7 +143,7 @@
 
 
         <jsp:include page="includes/scripts.jsp"/>
-         <jsp:include page="./includes/footer.jsp"/>
+         <jsp:include page="./includes/footer2.jsp"/>
         <script type="text/javascript" src="js/toast_message.js"></script>
     </body>
 </html>

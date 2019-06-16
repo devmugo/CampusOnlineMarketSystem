@@ -29,7 +29,7 @@ public class LogOut extends HttpServlet {
          session = request.getSession();
         session.invalidate();
         
-        getServletContext().getRequestDispatcher("/Welcome.jsp").forward(request, response);
+        response.sendRedirect("Home");
         
         
     }

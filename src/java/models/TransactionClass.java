@@ -27,7 +27,8 @@ public class TransactionClass {
     @Column(nullable=true)
     private String buyerid;
     private String sellerid;
-    private String itemsold;
+    private String item;
+    private String brand;
     private String idate;
     private String msgsent;
    private String itemdelivered;
@@ -36,23 +37,23 @@ public class TransactionClass {
     public TransactionClass() {
     }
 
-    public TransactionClass(String sellerid, String buyerid, String itemsold, String idate,String msgsent,String itemdelivered,Double price) {
-        
+    public TransactionClass(String buyerid, String sellerid, String item, String brand, String idate, String msgsent, String itemdelivered, Double price) {
         this.buyerid = buyerid;
         this.sellerid = sellerid;
-        this.itemsold = itemsold;
+        this.item = item;
+        this.brand = brand;
         this.idate = idate;
-        this.msgsent=msgsent;
-         this.itemdelivered = itemdelivered;
-         this.price=price;
+        this.msgsent = msgsent;
+        this.itemdelivered = itemdelivered;
+        this.price = price;
     }
 
-   
+    
+
     public int getTransactionId() {
         return transactionId;
     }
 
-  
     public String getBuyerid() {
         return buyerid;
     }
@@ -69,22 +70,31 @@ public class TransactionClass {
         this.sellerid = sellerid;
     }
 
-    public String getItemsold() {
-        return itemsold;
+    public String getItem() {
+        return item;
     }
 
-    public void setItemsold(String itemsold) {
-        this.itemsold = itemsold;
+    public void setItem(String item) {
+        this.item = item;
     }
 
-    public String getDate() {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getIdate() {
         return idate;
     }
 
-    public void setDate(String date) {
-        this.idate = date;
+    public void setIdate(String idate) {
+        this.idate = idate;
     }
-     public String getMsgsent() {
+
+    public String getMsgsent() {
         return msgsent;
     }
 
@@ -108,23 +118,9 @@ public class TransactionClass {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "TransactionClass{" + "transactionId=" + transactionId + ", buyerid=" + buyerid + ", sellerid=" + sellerid + ", itemsold=" + itemsold + ", date=" + idate + ", msgsent=" + msgsent + ", itemdelivered=" + itemdelivered + ", price=" + price + '}';
-    }
-    
+   
+
 
    
-    
-    
-     
-
-    
-
-   
-    
-    
-
-  
     
 }

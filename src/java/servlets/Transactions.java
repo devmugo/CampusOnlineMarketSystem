@@ -49,20 +49,22 @@ public class Transactions extends HttpServlet {
             String sellerid = itemonsale.getNationalid();
             Double price = itemonsale.getPrice();
             Date date = new Date();
-            SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             String datei = formatter.format(date);
+            System.out.println(date);
+            System.out.println(datei);
             
-            String item = itemonsale.getCategory();
+            String category = itemonsale.getCategory();
 
             String Brand = itemonsale.getBrand();
-            String brand = Brand.concat(" ");
-            String itemsold = brand.concat(item);
+           // String brand = Brand.concat(" ");
+           // String itemsold = brand.concat(item);
             HttpSession sessionsa = request.getSession(false);
             String buyerid = (String) sessionsa.getAttribute("nationalid");
             String msgsent = "No";
             String itemdelivered = "No";
 
-            TransactionClass transact = new TransactionClass(sellerid, buyerid, itemsold, datei, msgsent, itemdelivered,price);
+            TransactionClass transact = new TransactionClass(buyerid, sellerid, category,Brand ,datei, msgsent, itemdelivered,price);
             if (itemonsale != null) {
                 session.delete(itemonsale);
 
@@ -74,10 +76,11 @@ public class Transactions extends HttpServlet {
             request.setAttribute("success", success);
 
         } catch (Exception e) {
+            response.sendRedirect("ShowGoods");
 
         } finally {
-
-            request.getRequestDispatcher("/ShowGoods").forward(request, response);
+             request.getRequestDispatcher("ShowGoods").forward(request, response);
+           
 
         }
 

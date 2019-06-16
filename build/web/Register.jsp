@@ -15,38 +15,56 @@
     </head>
     <body>
         <jsp:include page="./includes/toast_message.jsp" />
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark white fixed-top" style="height:70px;">
+
+            
             <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/CampusOnlineMarketSystem/">Home</a>
-                    </li>
+                    <a class="navbar-brand" href="Home" style="margin-left: -250px">
+                        <img src="img/logo.png" height="50" width="200" class="d-inline-block align-top"
+                             alt="mdb logo"> 
+                    </a>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/CampusOnlineMarketSystem/#about">About Us</a>
-                    </li>
                 </ul>
+
+
+                <ul class="navbar-nav nav-flex-icons" style="">
+
+
+                </ul>
+
                 <ul class="navbar-nav ml-auto nav-flex-icons">
 
+
+
+
                     <li class="nav-item">
-                        <a class="nav-link" href="Loginpage.jsp">Log In</a>
+                        <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="#" >FAQ</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-default waves-effect btn-sm align-middle  " data-toggle="modal" data-target="#elegantModalForm"  >LOG IN</a>
+                    </li>
+
+
+                </ul>
+
+
 
             </div>
         </nav>
 
-        <div style="max-width: 50%; margin:0 auto;" >
+
+
+        <div style="max-width: 42%; margin:0 auto;" >
 
             <!-- Default form register -->
             <form class="text-center border border-light p-5"  name = "myForm" onsubmit = "return(validate());" style ="background-color: white; margin-top:5%;max-width:100%" action="UserServlet" method="post">
                 <div style="max-width: 100%; height: 40px">
-                    <h5 style="color:green; ">   ${requestScope.success} </h5> 
-                    <h5 style="color:red"> ${requestScope.error}  </h5> 
+                    <h5 style="color:lightgreen; background-color: darkgreen">   ${requestScope.success} </h5> 
+                    <h5 style="color:red;background-color:darkred"> ${requestScope.error}  </h5> 
                     <br>
                 </div>
                 <p class="h4 mb-4" style="font-size: 30px;font-weight: bold;">Register </p>
@@ -64,11 +82,11 @@
                 </div>
                 <input type="tel" id="defaultRegisterPhonePassword" class="form-control" name="id" autocomplete="off" placeholder="National id" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
                 <div id="iderror" style="color: red; float:left">
-               </div>
+                </div>
                 <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
 
                 </small>
-               
+
                 <!-- E-mail -->
                 <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" autocomplete="off" name ="email" placeholder="E-mail" required>
                 <div class="form-row mb-4">
@@ -79,10 +97,10 @@
                     <div class="col">
                         <input type="password" id="defaultRegisterFormPassword" name="pass2" class="form-control" placeholder="Repeat Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
                     </div>
-                    
+
                 </div>
-                 <div id="passerror" style="color: red">
-               </div>
+                <div id="passerror" style="color: red">
+                </div>
                 <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
 
                 </small>
@@ -90,8 +108,8 @@
 
                 <!-- Phone number -->
                 <input type="tel" id="defaultRegisterPhonePassword" autocomplete="off" name="phone" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
-               <div id="phoneerror" style="color: red">
-               </div>
+                <div id="phoneerror" style="color: red">
+                </div>
                 <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
 
                 </small>
@@ -109,9 +127,48 @@
             </form>
             <!-- Default form register -->
         </div>
+                    <  <!-- Modal -->
+        <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <!--Content-->
+                <div class="modal-content form-elegant">
+                    <!--Header-->
+                    <div class="modal-header text-center">
+                        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Log In</strong></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    
+                    <div class="modal-body mx-4">
+                        <form method="post" action="LoginServlet">
+                        <!--Body-->
+                        <div class="md-form mb-5">
+                            <input type="text" id="Form-email1" class="form-control validate" name="username">
+                            <label for="Form-email1">Your email</label>
+                        </div>
+
+                        <div class="md-form pb-3">
+                            <input type="password" id="Form-pass1" class="form-control validate" name="password">
+                            <label for="Form-pass1">Your password</label>
+                           
+                        </div>
+
+                        <div class="text-center mb-3">
+                            <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Log In</button>
+                        </div>
+                        </form>
+                
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+        </div>
+
 
         <jsp:include page="./includes/scripts.jsp"/>
         <script type="text/javascript" src="js/toast_message.js"></script>
-         <jsp:include page="./includes/footer.jsp"/>
+        <jsp:include page="./includes/footer2.jsp"/>
     </body>
 </html>

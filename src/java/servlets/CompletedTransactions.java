@@ -41,45 +41,47 @@ public class CompletedTransactions extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Session session = factory.openSession();
+        Session dbsession = factory.openSession();
        
       try{
         int transid = Integer.parseInt(request.getParameter("transid"));
-        Transaction txn = session.beginTransaction();
+        Transaction txn = dbsession.beginTransaction();
+        System.out.println(transid);
         
-         System.out.println(transid);
-        TransactionClass transn = (TransactionClass) session.get(TransactionClass.class, transid);
+        
+        TransactionClass transn = (TransactionClass) dbsession.get(TransactionClass.class, transid);
         String buyerid = transn.getBuyerid();
         String sellerid = transn.getSellerid();
-        String itemsold = transn.getItemsold();
+        String category = transn.getItem();
+        String brand = transn.getBrand();
         Double price =transn.getPrice();
         int iprice =price.intValue();
         int amountpaid = (int) (iprice*0.9);
         int commission = (iprice-amountpaid);
         
         Date date = new Date(); 
-        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");  
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd"); 
         String datedone = formatter.format(date);  
         
-        DoneTransactions done = new DoneTransactions(transid,datedone,itemsold,sellerid,buyerid,price,amountpaid,commission);
         
-         if(transn!=null){
-            session.delete(transn);
-             
-         }
+        DoneTransactions done = new DoneTransactions(transid,datedone,category,brand,sellerid,buyerid,price,amountpaid,commission);
+        
+        
+            dbsession.delete(transn);
+         
         
          
-        session.save(done);
+        dbsession.save(done);
          
          txn.commit();
-         session.close();
-          response.sendRedirect("ViewTransactions");
+         dbsession.close();
+      
         
        
       }
       catch(Exception e ){
           System.out.println(e.getMessage());
-           response.sendRedirect("ViewTransactions");
+          
       }
       finally{
        response.sendRedirect("ViewTransactions");

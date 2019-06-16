@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/goodsdisplay.css" />
 <link rel="stylesheet" href="css/fixed-navigation-bar.css" />
 <link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/style.css" />
  
  
 

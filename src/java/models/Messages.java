@@ -19,7 +19,7 @@ public class Messages{
 private int index_number; 
 
 private String name;
-private String number;
+private String email;
 private String subject;
  @Column(name = "message", length=2300)
 private String message;
@@ -28,9 +28,9 @@ private String message;
     }
     
  
-    public Messages(String name, String number, String subject, String message) {
+    public Messages(String name, String email, String subject, String message) {
         this.name = name;
-        this.number = number;
+        this.email = email;
         this.subject = subject;
         this.message = message;
     }
@@ -47,12 +47,12 @@ private String message;
         this.name = name;
     }
 
-    public String getNumber() {
-        return number;
+    public String getEmail() {
+        return email;
     }
 
     public void setNumber(String number) {
-        this.number = number;
+        this.email = number;
     }
 
     public String getSubject() {

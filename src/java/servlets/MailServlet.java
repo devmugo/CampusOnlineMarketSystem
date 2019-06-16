@@ -51,9 +51,13 @@ try{
         //create an instance of transaction class
         TransactionClass tsn = (TransactionClass) session.get(TransactionClass.class, index);
         String id = tsn.getSellerid();
-        String itemsold = tsn.getItemsold();
-        String idate = tsn.getDate();
+        String item = tsn.getItem();
+        String brand = tsn.getBrand();
+       String itemsold = brand.concat(" " + item );
+        String idate = tsn.getIdate();
         int tid = tsn.getTransactionId();
+        
+        
 
         String hql = "from Users user where user.nationalId=:id";
 
@@ -63,9 +67,11 @@ try{
         List results = (ArrayList)query.list();
         Users user = (Users)results.get(0);
         String toemail = user.getEmail();
+         
         
         
         try{
+           
         String message = "Greetings . Your item " + itemsold + "  posted on  "  + idate + "  has found a customer. Avail it to our office in not more than 24 hrs"
                 + " transaction id is "+tid +" Note: A 10% commission service fee is chargable. Thank you " ;
         
@@ -74,7 +80,7 @@ try{
           final String from ="mugomwash@gmail.com";
           final String password="mibmusavpexjnvxm";
           final String username="mugomwash@gmail.com";
-          
+         
           Properties props = System.getProperties();
           props.put("mail.smtp.host","smtp.gmail.com");
           props.put("mail.smtp.auth","true");
@@ -101,13 +107,14 @@ try{
       } catch (Exception ex) {
           Logger.getLogger(Emailbean.class.getName()).log(Level.SEVERE, null, ex);
                System.out.println("Bean Error " + ex.getMessage());
+                
       }
      
         String messag = "Mail sent Successfully";
          System.out.println("message  sent");
         request.setAttribute("message",messag);
         tsn.setMsgsent("yes");
-        response.sendRedirect("ViewTransactions");
+      
         
         }
         catch (Exception e ){
@@ -115,7 +122,7 @@ try{
         String error="mail not sent ";
         request.setAttribute("error",error);
         System.out.println(e.getMessage());
-           response.sendRedirect("ViewTransactions");
+        response.sendRedirect("ViewTransactions");
         
         }
          txn.commit();
@@ -126,13 +133,14 @@ try{
         
 }
 catch(Exception e ){
-       response.sendRedirect("ViewTransactions");
+   
+    
     
 
 
 }
 finally{
-          
+         response.sendRedirect("ViewTransactions");   
         
            
 }

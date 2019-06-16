@@ -59,7 +59,7 @@ public class UserServlet extends HttpServlet {
 
         } catch (Exception e) {
          
-            error = "Another User with same email exists. Please use your email";
+            error = "Error! Email or Id exists";
             request.setAttribute("error", error);
           
         } finally {

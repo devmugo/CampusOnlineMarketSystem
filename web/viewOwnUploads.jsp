@@ -20,80 +20,75 @@
     </head>
     <body>
         <jsp:include page="./includes/toast_message.jsp" />
-        <% response.setHeader("Cache-Control", "no-cache,must-revalidate,no-store");
+
+
+        <%  response.setHeader("Cache-Control", "no-cache,must-revalidate,no-store");
             response.setHeader("Pragma", "no-cache");
             response.setHeader("Expires", "0");
             HttpSession sessionsa = request.getSession(false);
             String user = (String) sessionsa.getAttribute("user");
             if (user == null) {
 
-                response.sendRedirect("Login.jsp");
+                response.sendRedirect("Home");
             }
 
 
         %>
-        <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark white fixed-top" style="height:70px;">
+
+            
             <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul class="navbar-nav mr-auto">
+                    <a class="navbar-brand" href="#" style="margin-left: -250px">
+                        <img src="img/logo.png" height="50" width="200" class="d-inline-block align-top"
+                             alt="mdb logo"> 
+                    </a>
+
+                </ul>
+
+
+                <ul class="navbar-nav nav-flex-icons" style="">
+
+
                     <li class="nav-item">
-                        <a class="nav-link" href="/CampusOnlineMarketSystem/">Home</a>
+                        <a class="btn btn-outline-default waves-effect btn-sm align-middle" href="ShowGoods" >Buy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="UploadHib.jsp" style="background: black; color: white;font-weight: bold">Sell</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item ">
+                        <a class="nav-link p-0" href="#">
+                            <img src="img/Profile.png" class="rounded-circle z-depth-0"
+                                 alt="avatar image" height="35">
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/CampusOnlineMarketSystem/#about">About Us</a>
+                        <a class="nav-link" href="#" style="color: black;font-weight: bold"><%=user%></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="#" >FAQ</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="LogOut" >LOG OUT</a>
                     </li>
 
 
                 </ul>
-                <c:choose>
-                    <c:when test="${sessionScope.loggedIn==true}">
-
-                        <ul class="navbar-nav nav-flex-icons" >
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="ShowGoods">Buy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="UploadHib.jsp">Sell</a>
-                            </li>
-
-                        </ul>
-                        <ul class="navbar-nav ml-auto nav-flex-icons">
-
-                            <a class="nav-link p-0" href="#">
-                                <img src="img/Profile.png" class="rounded-circle z-depth-0"
-                                     alt="avatar image" height="35">
-                            </a>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><%=user%></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="LogOut">Log Out</a>
-                            </li>
 
 
-                        </ul>
-                    </c:when>
-
-                    <c:otherwise>
-                        <ul class="navbar-nav ml-auto nav-flex-icons">
-                            <li class="nav-item">
-                                <a class="nav-link" href="Login.jsp ">Log In</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Register.jsp">Register</a>
-                            </li>
-
-                        </c:otherwise>
-                    </c:choose>
 
             </div>
-        </nav> 
+        </nav>
+
+
         <div style="height:100px">
             <br>
 
@@ -185,7 +180,7 @@
 
     </script>
     <jsp:include page="./includes/scripts.jsp"/>
-      <jsp:include page="./includes/footer.jsp"/>
+    <jsp:include page="./includes/footer.jsp"/>
     <script type="text/javascript" src="js/toast_message.js"></script>
 
 </body>

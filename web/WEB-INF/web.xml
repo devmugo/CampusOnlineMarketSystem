@@ -92,6 +92,14 @@
         <servlet-name>DetailsServlet</servlet-name>
         <servlet-class>servlets.DetailsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Reports</servlet-name>
+        <servlet-class>servlets.Reports</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>servlets.Home</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -184,12 +192,20 @@
         <servlet-name>DetailsServlet</servlet-name>
         <url-pattern>/DetailsServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Reports</servlet-name>
+        <url-pattern>/Reports</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>Welcome.jsp</welcome-file>
+        <welcome-file>Home</welcome-file>
     </welcome-file-list>
 </web-app>
