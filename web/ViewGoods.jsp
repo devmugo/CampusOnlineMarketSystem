@@ -71,12 +71,10 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="#" >FAQ</a>
-                    </li>
-
-
-                    <li class="nav-item">
                         <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="LogOut" >LOG OUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="Help.jsp" >FAQ</a>
                     </li>
 
 

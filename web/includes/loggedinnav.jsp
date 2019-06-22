@@ -53,7 +53,7 @@
                     </li>
           
             <li class="nav-item">
-                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="#" style="background: black; color: white;font-weight: bold">FAQ</a>
+                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="Help.jsp" style="background: black; color: white;font-weight: bold">FAQ</a>
             </li>
             
            

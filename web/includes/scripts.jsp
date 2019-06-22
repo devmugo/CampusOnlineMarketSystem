@@ -8,3 +8,4 @@
 <script type="text/javascript" src="js/form.js"></script>
 <script type="text/javascript" src="js/charts.js"></script>
 <script type="text/javascript" src="js/passreset.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>

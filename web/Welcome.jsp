@@ -36,16 +36,18 @@
                         %>
                         <ul class="navbar-nav nav-flex-icons" style="">
 
+
                             <li class="nav-item">
-                                <a class="nav-link" href="#" style="background: black; color: white;font-weight: bold"></a>
+                                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="ShowGoods" >Buy</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"style="background: black; color: white;font-weight: bold"></a>
+                                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="UploadHib.jsp" >Sell</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" style="background: black; color: white;font-weight: bold"></a>
+                                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="ViewOwnUploads" >Uploads</a>
                             </li>
                         </ul>
+
                         <ul class="navbar-nav ml-auto nav-flex-icons">
 
                             <a class="nav-link p-0" href="#">
@@ -64,20 +66,26 @@
                     </c:when>
 
                     <c:otherwise>
-                        <ul class="navbar-nav ml-auto nav-flex-icons">
+                         <ul class="navbar-nav ml-auto nav-flex-icons" style="margin-right: 250px">
                             <li class="nav-item">
                                 <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="" data-toggle="modal" data-target="#modalContactForm" >CONTACT US</a>
                             </li>
 
+                            
+                            
                             <li class="nav-item">
-                                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="#" >FAQ</a>
+                                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="Help.jsp" >FAQ</a>
                             </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto nav-flex-icons">
+                
                             <li class="nav-item">
                                 <a class="btn btn-outline-default waves-effect btn-sm align-middle " data-toggle="modal" data-target="#elegantModalForm"  >LOG IN</a>
                             </li>
                             <li class="nav-item">
                                 <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="Register.jsp" >REGISTER</a>
                             </li>
+                            
                         </ul>
 
                     </c:otherwise>
@@ -247,12 +255,12 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title w-100" id="myModalLabel" style="color:black">First you need to log in</h4>
-                        
+
                     </div>
-                    
+
                     <div class="modal-footer">
                         <button type="button" class="btn red btn-sm" data-dismiss="modal">Close</button>
-                        
+
                     </div>
                 </div>
             </div>

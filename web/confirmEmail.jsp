@@ -20,28 +20,24 @@
 
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark white fixed-top" style="height:70px;">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-            aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+   
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-        <ul class="navbar-nav mr-auto">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo.png" height="50" width="200" class="d-inline-block align-top"
-                     alt="mdb logo"> 
-            </a>
+         <ul class="navbar-nav mr-auto">
+                    <a class="navbar-brand" href="#" style="margin-left: -250px">
+                        <img src="img/logo.png" height="50" width="200" class="d-inline-block align-top"
+                             alt="mdb logo"> 
+                    </a>
 
-        </ul>
+                </ul>
 
 
 
         <ul class="navbar-nav ml-auto nav-flex-icons">
            
          
-            
             <li class="nav-item">
-                <a class="btn btn-sm align-middle" href="#" style="background: black; color: white;font-weight: bold">FAQ</a>
-            </li>
+                                <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="Help.jsp" >FAQ</a>
+                            </li>
             
            
            
