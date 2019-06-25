@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/MUG/Documents/NetBeansProjects/CampusOnlineMarketSystem/web/ViewGoods.jsp</file>
-            <file>file:/C:/Users/MUG/Documents/NetBeansProjects/CampusOnlineMarketSystem/web/Register.jsp</file>
-            <file>file:/C:/Users/MUG/Documents/NetBeansProjects/CampusOnlineMarketSystem/web/viewOwnUploads.jsp</file>
-            <file>file:/C:/Users/MUG/Documents/NetBeansProjects/CampusOnlineMarketSystem/web/confirmEmail.jsp</file>
-            <file>file:/C:/Users/MUG/Documents/NetBeansProjects/CampusOnlineMarketSystem/web/Welcome.jsp</file>
+            <file>file:/C:/Users/MUG/Documents/NetBeansProjects/CampusOnlineMarketSystem/src/java/servlets/PhotoUploadHib.java</file>
+            <file>file:/C:/Users/MUG/Documents/NetBeansProjects/CampusOnlineMarketSystem/web/admin.jsp</file>
+            <file>file:/C:/Users/MUG/Documents/NetBeansProjects/CampusOnlineMarketSystem/src/java/servlets/Reports.java</file>
+            <file>file:/C:/Users/MUG/Documents/NetBeansProjects/CampusOnlineMarketSystem/src/java/servlets/UserServlet.java</file>
+            <file>file:/C:/Users/MUG/Documents/NetBeansProjects/CampusOnlineMarketSystem/web/SearchResult.jsp</file>
         </group>
     </open-files>
 </project-private>

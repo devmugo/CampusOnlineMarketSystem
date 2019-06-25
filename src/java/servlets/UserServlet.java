@@ -42,8 +42,10 @@ public class UserServlet extends HttpServlet {
         try {
             Transaction transaction = session.beginTransaction();
             String nationalId = request.getParameter("id");
-            String firstName = request.getParameter("fname");
-            String lastName = request.getParameter("lname");
+            String fName = request.getParameter("fname");
+            String firstName = fName.toUpperCase();
+            String lName = request.getParameter("lname");
+            String lastName = lName.toUpperCase();
             String phone = request.getParameter("phone");
             String email = request.getParameter("email");
             String residence = request.getParameter("residence");

@@ -47,8 +47,9 @@ public class PhotoUploadHib extends HttpServlet {
            
            String category = request.getParameter("category");
             String brand = request.getParameter("brand");
-            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-	    Date date = new Date();
+            Date dat = new Date();
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            String date = formatter.format(dat);
            
             
             Part part = request.getPart("photo") ;

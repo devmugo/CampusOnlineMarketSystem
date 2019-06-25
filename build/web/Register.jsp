@@ -19,7 +19,7 @@
 
         <nav class="mb-1 navbar navbar-expand-lg navbar-dark white fixed-top" style="height:70px;">
 
-            
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul class="navbar-nav mr-auto">
                     <a class="navbar-brand" href="Home" style="margin-left: -250px">
@@ -41,7 +41,7 @@
                     <li class="nav-item">
                         <a class="btn btn-outline-default waves-effect btn-sm align-middle  " data-toggle="modal" data-target="#elegantModalForm"  >LOG IN</a>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a class="btn btn-outline-default waves-effect btn-sm align-middle " href="Help.jsp" >FAQ</a>
                     </li>
@@ -71,14 +71,17 @@
                 <div class="form-row mb-4">
                     <div class="col">
                         <!-- First name -->
-                        <input type="text" id="defaultRegisterFormFirstName" class="form-control" autocomplete="off" name="fname" placeholder="First name" required>
+                        <input type="text" id="defaultRegisterFormFirstName" class="form-control" autocomplete="off" name="fname" 
+                               placeholder="First name"  pattern="[A-Za-z]{}"  title="Enter a Valid name" >
                     </div>
                     <div class="col">
                         <!-- Last name -->
-                        <input type="text" id="defaultRegisterFormLastName" class="form-control" autocomplete="off" name="lname" placeholder="Last name" required>
+                        <input type="text" id="defaultRegisterFormLastName" class="form-control" autocomplete="off" name="lname" 
+                               placeholder="Last name"  pattern="[A-Za-z]{}"  title="Enter a Valid Last name">
                     </div>
                 </div>
-                <input type="tel" id="defaultRegisterPhonePassword" class="form-control" name="id" autocomplete="off" placeholder="National id" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+                <input type="tel" id="defaultRegisterPhonePassword" class="form-control" name="id" autocomplete="off" placeholder="National id" 
+                       aria-describedby="defaultRegisterFormPhoneHelpBlock" required pattern="[0-9]{8}"  title="Enter a Valid Phone Number">
                 <div id="iderror" style="color: red; float:left">
                 </div>
                 <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
@@ -86,14 +89,18 @@
                 </small>
 
                 <!-- E-mail -->
-                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" autocomplete="off" name ="email" placeholder="E-mail" required>
+                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" 
+                       autocomplete="off" name ="email"
+                       placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email">
                 <div class="form-row mb-4">
                     <div class="col">
-                        <input type="password" id="defaultRegisterFormPassword" class="form-control" name="pass" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+                        <input type="password" id="defaultRegisterFormPassword" class="form-control" name="pass" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" 
+                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"> 
                     </div>
 
                     <div class="col">
-                        <input type="password" id="defaultRegisterFormPassword" name="pass2" class="form-control" placeholder="Repeat Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+                        <input type="password" id="defaultRegisterFormPassword" name="pass2" class="form-control" placeholder="Repeat Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" 
+                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                     </div>
 
                 </div>
@@ -105,7 +112,8 @@
 
 
                 <!-- Phone number -->
-                <input type="tel" id="defaultRegisterPhonePassword" autocomplete="off" name="phone" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+                <input type="tel" id="defaultRegisterPhonePassword" autocomplete="off" name="phone" class="form-control" placeholder="Phone number" 
+                       aria-describedby="defaultRegisterFormPhoneHelpBlock" required pattern="[0-9]{10}"  title="Enter a Valid Number">
                 <div id="phoneerror" style="color: red">
                 </div>
                 <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
@@ -125,7 +133,7 @@
             </form>
             <!-- Default form register -->
         </div>
-                    <  <!-- Modal -->
+        <  <!-- Modal -->
         <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -138,30 +146,30 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    
+
                     <div class="modal-body mx-4">
                         <form method="post" action="LoginServlet">
-                        <!--Body-->
-                        <div class="md-form mb-5">
-                            <input type="text" id="Form-email1" class="form-control validate" name="username">
-                            <label for="Form-email1">Your email</label>
-                        </div>
+                            <!--Body-->
+                            <div class="md-form mb-5">
+                                <input type="text" id="Form-email1" class="form-control validate" name="username">
+                                <label for="Form-email1">Your email</label>
+                            </div>
 
-                        <div class="md-form pb-3">
-                            <input type="password" id="Form-pass1" class="form-control validate" name="password">
-                            <label for="Form-pass1">Your password</label>
-                           
-                        </div>
+                            <div class="md-form pb-3">
+                                <input type="password" id="Form-pass1" class="form-control validate" name="password">
+                                <label for="Form-pass1">Your password</label>
 
-                        <div class="text-center mb-3">
-                            <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Log In</button>
-                        </div>
+                            </div>
+
+                            <div class="text-center mb-3">
+                                <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Log In</button>
+                            </div>
                         </form>
-                
+
+                    </div>
+                    <!--/.Content-->
                 </div>
-                <!--/.Content-->
             </div>
-        </div>
         </div>
 
 

@@ -40,7 +40,7 @@ public class Upload {
     private double price;
     @Transient
     private String b64;
-    private Date date; 
+    private String date; 
     
     private String description;
     
@@ -56,7 +56,7 @@ public void setB64(String b64) {
     public Upload() {
     }
 
-    public Upload(String nationalid, String category, String brand, byte[] image, String age, String cond, double price ,Date date,String description) {
+    public Upload(String nationalid, String category, String brand, byte[] image, String age, String cond, double price ,String date,String description) {
         
         this.nationalid = nationalid;
         this.category = category;
@@ -129,11 +129,11 @@ public void setB64(String b64) {
         this.price = price;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

@@ -74,20 +74,20 @@ public class Reports extends HttpServlet {
         int nol = lapi.size();
         
         //furniture
-        hql = "FROM Upload E where E.category='furniture' ";
+        hql = "FROM Upload E where E.category='bed' or E.category='chair' ";
         query = session.createQuery(hql);
         List fntr = query.list();
         int nof = fntr.size();
         //home appliances
-        hql = "FROM Upload E where E.category='woofer' ";
+        hql = "FROM Upload E where E.category='woofer' or E.category='tv' ";
         query = session.createQuery(hql);
         List ha = query.list();
         int noh = ha.size();
         //stationary
-        hql = "FROM Upload E where E.category='stationary' ";
+        hql = "FROM Upload E where E.category='books' or E.category='printer' ";
         query = session.createQuery(hql);
         List  stn= query.list();
-        int nos = smr.size();
+        int nos = stn.size();
         
         int others = (no_of_items-(nos+noh+nof+nol+smphnes));
         //getting no of sales made on items
@@ -96,12 +96,13 @@ public class Reports extends HttpServlet {
         List  lap= query.list();
         int nold = lap.size();
         
-         hql = "FROM DoneTransactions E where E.category='smart phone' ";
+         hql = "FROM DoneTransactions E where E.category='smart phone' or E.category='phone' ";
         query = session.createQuery(hql);
         List  sp= query.list();
         int nosp = sp.size();
         
         int othersd = (done_tr-(nosp+nold));
+        System.out.println("Stationeries  "  + nos);
         
        request.setAttribute("tm",no_of_items);
        request.setAttribute("dt",done_tr);

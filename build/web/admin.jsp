@@ -351,6 +351,11 @@ position:absolute;
       <!--Grid row-->
 
     </div>
+                  <div  >
+                      Generate Daily report
+                      <a href="pdfReport" target="_blank"> Generate</a>
+                      <br> <br>
+                  </div>
   </main>
   <!--Main layout-->
  <jsp:include page="./includes/footer2.jsp"/>
@@ -378,7 +383,7 @@ position:absolute;
         labels: ["smart phones", "Laptops", "Furniture", "Stationary", "Home Appliances", "Others"],
         datasets: [{
           label: '# of Uploads',
-          data: [${nofsmrtp}, ${noflaptop}, ${nofurniture}, ${nostationary},${woofers}, ${goodsothers}],
+          data: [${nofsmrtp}, ${noflaptop}, ${nofurniture}, ${nostationary}, ${woofers}, ${goodsothers}],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
